@@ -1,0 +1,44 @@
+<div class="backdrop is-hidden js-backdrop" data-review-modal>
+  <div class="modal-review">
+    <button class="modal-review__close-btn" type="button" data-review-close>
+      <svg class="exercise-modal__close-icon close-icon">
+        <use href="/img/icons.svg#modalclose" width="24" height="24"></use>
+      </svg>
+    </button>
+    <p class="modal-title">Rating</p>
+    <div class="rating rating_set">
+      <div class="rating__value">0.0</div>
+      <div class="rating__body">
+        <div class="rating__active"></div>
+        <div class="rating__items">
+          <input type="radio" class="rating__radio" name="rating" value="1" />
+          <input type="radio" class="rating__radio" name="rating" value="2" />
+          <input type="radio" class="rating__radio" name="rating" value="3" />
+          <input type="radio" class="rating__radio" name="rating" value="4" />
+          <input type="radio" class="rating__radio" name="rating" value="5" />
+        </div>
+      </div>
+    </div>
+    <form class="modal-form">
+      <input
+        class="modal-input"
+        type="email"
+        autocomplete="off"
+        id="email"
+        name="email"
+        placeholder="Email"
+        pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
+      />
+
+      <textarea
+        placeholder="Your comment"
+        id="comment"
+        autocomplete="off"
+        name="comment"
+        class="modal-textarea"
+      ></textarea>
+
+      <button class="modal-form__send" type="submit">Send</button>
+    </form>
+  </div>
+</div>
