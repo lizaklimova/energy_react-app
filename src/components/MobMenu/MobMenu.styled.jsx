@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 export const MenuBackdrop = styled.div`
   /* width: 100vw;
   height: 100vh; */
+  overflow: hidden;
 `;
 export const Menu = styled.div`
   position: absolute;
@@ -14,6 +15,7 @@ export const Menu = styled.div`
   height: 100vh;
   background-color: ${({ theme: { theme } }) => theme.colors.accentBlack};
   padding: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +63,8 @@ export const MenuSocialsItem = styled.li`
   justify-content: center;
   border-radius: 10px;
   border: 1px solid ${({ theme: { theme } }) => theme.colors.accentWhite};
+  box-shadow: rgba(251, 251, 251, 0.744) 0px 1px 0px,
+    rgba(255, 255, 255, 0.599) 0px 0px 8px;
   opacity: 0.8;
 `;
 export const MenuSocialsLink = styled.a`
