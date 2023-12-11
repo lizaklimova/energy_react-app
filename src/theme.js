@@ -8,6 +8,7 @@ const theme = {
   },
   transitions: {
     linear: '300ms linear',
+    eased: '400ms ease-out',
   },
 };
 
