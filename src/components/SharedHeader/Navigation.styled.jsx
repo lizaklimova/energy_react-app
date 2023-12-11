@@ -7,6 +7,7 @@ export const Nav = styled.nav`
     display: block;
   }
 `;
+
 export const NavList = styled.ul`
   display: flex;
   align-items: center;
@@ -16,6 +17,8 @@ export const NavList = styled.ul`
   height: 52px;
   border-radius: 60px;
   background-color: ${({ theme: { theme } }) => theme.colors.accentBlack};
+  box-shadow: ${({ theme: { theme } }) => theme.shadows.wide};
+
   @media screen and (min-width: 1440px) {
     width: 265px;
   }
