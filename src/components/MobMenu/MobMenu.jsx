@@ -1,6 +1,5 @@
 import sprite from 'img/sprite.svg';
 import {
-  MenuBackdrop,
   Menu,
   CloseMenuBtn,
   CloseMenuIcon,
