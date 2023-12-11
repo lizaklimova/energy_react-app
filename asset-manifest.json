@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.cefb7be2.css",
-    "main.js": "/react-homework-template/static/js/main.169fa074.js",
-    "static/js/727.dedc293c.chunk.js": "/react-homework-template/static/js/727.dedc293c.chunk.js",
-    "static/js/224.7d5c8e65.chunk.js": "/react-homework-template/static/js/224.7d5c8e65.chunk.js",
-    "static/js/520.5cb82822.chunk.js": "/react-homework-template/static/js/520.5cb82822.chunk.js",
-    "static/media/sprite.svg": "/react-homework-template/static/media/sprite.49661debde0dc73a907571076e9bece6.svg",
-    "index.html": "/react-homework-template/index.html",
-    "main.cefb7be2.css.map": "/react-homework-template/static/css/main.cefb7be2.css.map",
-    "main.169fa074.js.map": "/react-homework-template/static/js/main.169fa074.js.map",
-    "727.dedc293c.chunk.js.map": "/react-homework-template/static/js/727.dedc293c.chunk.js.map",
-    "224.7d5c8e65.chunk.js.map": "/react-homework-template/static/js/224.7d5c8e65.chunk.js.map",
-    "520.5cb82822.chunk.js.map": "/react-homework-template/static/js/520.5cb82822.chunk.js.map"
+    "main.css": "/energy_react-app/static/css/main.cefb7be2.css",
+    "main.js": "/energy_react-app/static/js/main.18395370.js",
+    "static/js/727.dedc293c.chunk.js": "/energy_react-app/static/js/727.dedc293c.chunk.js",
+    "static/js/224.7d5c8e65.chunk.js": "/energy_react-app/static/js/224.7d5c8e65.chunk.js",
+    "static/js/520.5cb82822.chunk.js": "/energy_react-app/static/js/520.5cb82822.chunk.js",
+    "static/media/sprite.svg": "/energy_react-app/static/media/sprite.49661debde0dc73a907571076e9bece6.svg",
+    "index.html": "/energy_react-app/index.html",
+    "main.cefb7be2.css.map": "/energy_react-app/static/css/main.cefb7be2.css.map",
+    "main.18395370.js.map": "/energy_react-app/static/js/main.18395370.js.map",
+    "727.dedc293c.chunk.js.map": "/energy_react-app/static/js/727.dedc293c.chunk.js.map",
+    "224.7d5c8e65.chunk.js.map": "/energy_react-app/static/js/224.7d5c8e65.chunk.js.map",
+    "520.5cb82822.chunk.js.map": "/energy_react-app/static/js/520.5cb82822.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cefb7be2.css",
-    "static/js/main.169fa074.js"
+    "static/js/main.18395370.js"
   ]
 }
