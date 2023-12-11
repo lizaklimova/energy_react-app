@@ -10,6 +10,9 @@ const theme = {
     linear: '300ms linear',
     eased: '400ms ease-out',
   },
+  shadows: {
+    volume: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+  },
 };
 
 export default theme;

@@ -16,6 +16,7 @@ export const SocialsItem = styled.li`
   justify-content: center;
   border-radius: 10px;
   border: 1px solid rgba(36, 36, 36, 0.1);
+  box-shadow: ${({ theme: { theme } }) => theme.shadows.volume};
   transition: ${({ theme: { theme } }) =>
     ` background-color ${theme.transitions.linear}, opacity ${theme.transitions.linear}`};
 

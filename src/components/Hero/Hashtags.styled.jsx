@@ -19,6 +19,7 @@ export const HeroHashesMobItem = styled.li`
   border-radius: 30px;
   padding: 4px 14px;
   border: ${({ theme: { theme } }) => `1px solid ${theme.colors.accentBlack}`};
+  box-shadow: ${({ theme: { theme } }) => theme.shadows.volume};
 `;
 
 export const HeroHashesItemSpan = styled.span`
