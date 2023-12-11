@@ -1,20 +1,29 @@
 {
   "files": {
     "main.css": "/energy_react-app/static/css/main.cefb7be2.css",
-    "main.js": "/energy_react-app/static/js/main.8a7b492a.js",
+    "main.js": "/energy_react-app/static/js/main.5ebd8525.js",
     "static/js/727.dedc293c.chunk.js": "/energy_react-app/static/js/727.dedc293c.chunk.js",
     "static/js/224.7d5c8e65.chunk.js": "/energy_react-app/static/js/224.7d5c8e65.chunk.js",
     "static/js/520.5cb82822.chunk.js": "/energy_react-app/static/js/520.5cb82822.chunk.js",
+    "static/media/hero-women-desk2x.webp": "/energy_react-app/static/media/hero-women-desk2x.671f1dfcb0ff2e16e8eb.webp",
+    "static/media/hero-women-tab2x.webp": "/energy_react-app/static/media/hero-women-tab2x.5408f852b22ce44d1063.webp",
+    "static/media/hero-women-mob2x.webp": "/energy_react-app/static/media/hero-women-mob2x.2c69035cc75302b528a0.webp",
+    "static/media/hero-women-desk.webp": "/energy_react-app/static/media/hero-women-desk.9fcdf7d150264a5ad616.webp",
+    "static/media/hero-women-tab.webp": "/energy_react-app/static/media/hero-women-tab.7cb09c5ea7a1a2282564.webp",
+    "static/media/hero-women-mob.webp": "/energy_react-app/static/media/hero-women-mob.bf7fa17614c05bb98674.webp",
+    "static/media/hero-legs-desk2x.webp": "/energy_react-app/static/media/hero-legs-desk2x.703a6c898bc3f5c5c047.webp",
+    "static/media/hero-women-mob.jpg": "/energy_react-app/static/media/hero-women-mob.2fb7f825bd0f6c4c2001.jpg",
     "static/media/sprite.svg": "/energy_react-app/static/media/sprite.03f8909291eec34cb801df5d9144d1c5.svg",
+    "static/media/hero-legs-desk.webp": "/energy_react-app/static/media/hero-legs-desk.ed1d71485c8d9bc7b6ac.webp",
     "index.html": "/energy_react-app/index.html",
     "main.cefb7be2.css.map": "/energy_react-app/static/css/main.cefb7be2.css.map",
-    "main.8a7b492a.js.map": "/energy_react-app/static/js/main.8a7b492a.js.map",
+    "main.5ebd8525.js.map": "/energy_react-app/static/js/main.5ebd8525.js.map",
     "727.dedc293c.chunk.js.map": "/energy_react-app/static/js/727.dedc293c.chunk.js.map",
     "224.7d5c8e65.chunk.js.map": "/energy_react-app/static/js/224.7d5c8e65.chunk.js.map",
     "520.5cb82822.chunk.js.map": "/energy_react-app/static/js/520.5cb82822.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cefb7be2.css",
-    "static/js/main.8a7b492a.js"
+    "static/js/main.5ebd8525.js"
   ]
 }
