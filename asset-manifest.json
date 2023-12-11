@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/energy_react-app/static/css/main.cefb7be2.css",
-    "main.js": "/energy_react-app/static/js/main.5ebd8525.js",
+    "main.js": "/energy_react-app/static/js/main.f2522c6f.js",
     "static/js/727.dedc293c.chunk.js": "/energy_react-app/static/js/727.dedc293c.chunk.js",
     "static/js/224.7d5c8e65.chunk.js": "/energy_react-app/static/js/224.7d5c8e65.chunk.js",
     "static/js/520.5cb82822.chunk.js": "/energy_react-app/static/js/520.5cb82822.chunk.js",
@@ -17,13 +17,13 @@
     "static/media/hero-legs-desk.webp": "/energy_react-app/static/media/hero-legs-desk.ed1d71485c8d9bc7b6ac.webp",
     "index.html": "/energy_react-app/index.html",
     "main.cefb7be2.css.map": "/energy_react-app/static/css/main.cefb7be2.css.map",
-    "main.5ebd8525.js.map": "/energy_react-app/static/js/main.5ebd8525.js.map",
+    "main.f2522c6f.js.map": "/energy_react-app/static/js/main.f2522c6f.js.map",
     "727.dedc293c.chunk.js.map": "/energy_react-app/static/js/727.dedc293c.chunk.js.map",
     "224.7d5c8e65.chunk.js.map": "/energy_react-app/static/js/224.7d5c8e65.chunk.js.map",
     "520.5cb82822.chunk.js.map": "/energy_react-app/static/js/520.5cb82822.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cefb7be2.css",
-    "static/js/main.5ebd8525.js"
+    "static/js/main.f2522c6f.js"
   ]
 }
