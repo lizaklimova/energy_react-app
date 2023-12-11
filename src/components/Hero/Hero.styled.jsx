@@ -25,6 +25,7 @@ export const HeroIcon = styled.svg`
     height: 60px;
   }
 `;
+
 export const HeroTitle = styled.h1`
   font-size: 40px;
   font-weight: 400;
@@ -107,6 +108,7 @@ export const HeroHashesDeskItem = styled.li`
   border-radius: 30px;
   padding: 4px 14px;
   border: ${({ theme: { theme } }) => `1px solid ${theme.colors.accentBlack}`};
+  box-shadow: ${({ theme: { theme } }) => theme.shadows.volume};
 `;
 
 export const HeroHashesDeskItemSpan = styled.span`

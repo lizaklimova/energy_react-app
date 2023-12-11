@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import SharedHeader from 'components/SharedHeader/SharedHeader';
 import { lazy } from 'react';
 import Hero from 'components/Hero/Hero';
+import Exercises from 'components/Exercises/Exercises';
 
 const MainPage = lazy(() => import('pages/MainPage'));
 const FavouritesPage = lazy(() => import('pages/FavouritesPage'));
@@ -18,6 +19,7 @@ export const App = () => {
         </Route>
       </Routes>
       <Hero />
+      <Exercises />
     </>
   );
 };

@@ -25,6 +25,13 @@ export const NavigLink = styled(NavLink)`
   color: ${({ theme: { theme } }) => theme.colors.accentWhite};
   font-size: 16px;
   line-height: 1.5;
+  transition: ${({ theme: { theme } }) => `filter ${theme.transitions.linear}`};
+
+  &:hover:not(.active),
+  &:focus:not(.active) {
+    filter: ${({ theme: { theme } }) =>
+      `drop-shadow(-1px 1px 5px ${theme.colors.accentWhite})`};
+  }
 
   &.active {
     padding: 6px 12px;
