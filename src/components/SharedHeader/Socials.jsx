@@ -1,4 +1,4 @@
-import sprite from '../../img/sprite.svg';
+import sprite from 'img/sprite.svg';
 import {
   SocialsList,
   SocialsItem,

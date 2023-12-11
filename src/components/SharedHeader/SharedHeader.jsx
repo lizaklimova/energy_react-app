@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import Logo from './Logo';
 import { HeaderWrap, BurgerBtn, BurgerIcon } from './SharedHeader.styled';
 import { MainContainer } from '../App/App.styled';
 import Navigation from './Navigation';
 import Socials from './Socials';
 import MobMenu from 'components/MobMenu/MobMenu';
-import { useState } from 'react';
 
 const SharedHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
