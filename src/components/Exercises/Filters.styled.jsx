@@ -13,7 +13,7 @@ export const FiltersList = styled.ul`
 
 export const FilterItemBtn = styled.button`
   position: relative;
-  color: ${({ theme: { theme } }) => theme.colors.accentBlack};
+  color: ${({ theme }) => theme.text};
   background-color: transparent;
   opacity: 0.6;
   padding: 0;
@@ -29,7 +29,7 @@ export const FilterItemBtn = styled.button`
     top: 110%;
     left: 0;
     opacity: 0;
-    transition: ${({ theme: { theme } }) => `all ${theme.transitions.eased}`};
+    transition: ${({ theme }) => `all ${theme.eased}`};
   }
 
   &.active {

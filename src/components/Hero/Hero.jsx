@@ -37,7 +37,6 @@ const Hero = () => {
       <MainContainer>
         <HeroDeskAdditWrap>
           <div>
-            {' '}
             <HeroTitleIconWrap>
               <HeroIcon width={38} height={38}>
                 <use href={`${sprite}#icon-sun`}></use>

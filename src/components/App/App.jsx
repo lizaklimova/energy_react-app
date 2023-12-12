@@ -1,16 +1,38 @@
-import { Routes, Route } from 'react-router-dom';
-import SharedHeader from 'components/SharedHeader/SharedHeader';
+import React, { useContext } from 'react';
+import Notiflix from 'notiflix';
 import { lazy } from 'react';
-import Hero from 'components/Hero/Hero';
-import Exercises from 'components/Exercises/Exercises';
+import { Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { ThemeContext } from 'contexts/ThemeContext';
+import { lightTheme, darkTheme } from 'theme';
+import { GlobalStyles } from 'styles/globalStyled';
+import SharedHeader from 'components/SharedHeader/SharedHeader';
 
 const MainPage = lazy(() => import('pages/MainPage'));
 const FavouritesPage = lazy(() => import('pages/FavouritesPage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 
 export const App = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const currentTheme = theme === 'dark' ? darkTheme : lightTheme;
+
+  Notiflix.Notify.init({
+    timeout: 5000,
+    clickToClose: true,
+    cssAnimationStyle: 'from-bottom',
+    width: '400px',
+    fontSize: '14px',
+    fontAwesomeIconStyle: 'shadow',
+    info: {
+      notiflixIconColor: currentTheme.background,
+      background: currentTheme.text,
+      textColor: currentTheme.background,
+    },
+  });
+
   return (
-    <>
+    <ThemeProvider theme={currentTheme}>
+      <GlobalStyles />
       <Routes>
         <Route path="/" element={<SharedHeader />}>
           <Route index element={<MainPage />} />
@@ -18,8 +40,6 @@ export const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-      <Hero />
-      <Exercises />
-    </>
+    </ThemeProvider>
   );
 };

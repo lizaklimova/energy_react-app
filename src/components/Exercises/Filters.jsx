@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiltersList, FilterItemBtn } from './Filters.styled';
 
-const Filters = () => {
+const Filters = ({ setFilter }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleFilterClick = index => {
@@ -13,7 +13,10 @@ const Filters = () => {
       <li>
         <FilterItemBtn
           className={activeIndex === 0 ? 'active' : ''}
-          onClick={() => handleFilterClick(0)}
+          onClick={() => {
+            handleFilterClick(0);
+            setFilter('Body%20parts');
+          }}
         >
           Body parts
         </FilterItemBtn>
@@ -21,7 +24,10 @@ const Filters = () => {
       <li>
         <FilterItemBtn
           className={activeIndex === 1 ? 'active' : ''}
-          onClick={() => handleFilterClick(1)}
+          onClick={() => {
+            handleFilterClick(1);
+            setFilter('Muscles');
+          }}
         >
           Muscles
         </FilterItemBtn>
@@ -29,7 +35,10 @@ const Filters = () => {
       <li>
         <FilterItemBtn
           className={activeIndex === 2 ? 'active' : ''}
-          onClick={() => handleFilterClick(2)}
+          onClick={() => {
+            handleFilterClick(2);
+            setFilter('Equipment');
+          }}
         >
           Equipment
         </FilterItemBtn>
