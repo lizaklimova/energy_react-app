@@ -7,8 +7,7 @@ export const LogoIconWrap = styled.div`
 
   &:hover,
   &:focus {
-    filter: ${({ theme: { theme } }) =>
-      `drop-shadow(-1px 1px 5px ${theme.colors.greenHover})`};
+    filter: ${({ theme }) => `drop-shadow(-1px 1px 5px ${theme.hover})`};
   }
 `;
 

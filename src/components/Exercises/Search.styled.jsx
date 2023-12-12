@@ -20,13 +20,13 @@ export const SearchWrap = styled.div`
 `;
 
 export const SearchInputLabel = styled.label`
-  color: ${({ theme: { theme } }) => theme.colors.accentBlack};
+  color: ${({ theme }) => theme.text};
   font-size: 14px;
   line-height: 1.43;
   position: absolute;
   top: 10px;
   left: 20px;
-  transition: ${({ theme: { theme } }) => `top ${theme.transitions.eased}`};
+  transition: ${({ theme }) => `top ${theme.eased}`};
 
   @media screen and (min-width: 768px) {
     top: 8px;
@@ -38,12 +38,11 @@ export const SearchInputLabel = styled.label`
 export const SearchInput = styled.input`
   width: 100%;
   border-radius: 30px;
-  border: ${({ theme: { theme } }) =>
-    `1.5px solid ${theme.colors.accentBlack}`};
+  border: ${({ theme }) => `1.5px solid ${theme.text}`};
   background-color: transparent;
   padding: 12px 20px;
-  transition: ${({ theme: { theme } }) =>
-    `box-shadow ${theme.transitions.eased}`};
+  transition: ${({ theme }) => `box-shadow ${theme.eased}`};
+  color: currentColor;
 
   &:focus {
     outline: none;
@@ -53,7 +52,7 @@ export const SearchInput = styled.input`
   &:focus + label {
     outline: none;
     top: -12px;
-    background-color: ${({ theme: { theme } }) => theme.colors.accentWhite};
+    background-color: ${({ theme }) => theme.background};
   }
 
   @media screen and (min-width: 428px) {
@@ -75,5 +74,5 @@ export const SearchIcon = styled(IoSearch)`
   right: 16px;
   width: 18px;
   height: 18px;
-  fill: ${({ theme: { theme } }) => theme.colors.accentBlack};
+  fill: ${({ theme }) => theme.text};
 `;

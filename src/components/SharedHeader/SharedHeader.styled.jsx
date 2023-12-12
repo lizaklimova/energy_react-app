@@ -19,4 +19,5 @@ export const BurgerBtn = styled.button`
 export const BurgerIcon = styled(RxHamburgerMenu)`
   width: 32px;
   height: 32px;
+  color: ${({ theme }) => theme.text};
 `;

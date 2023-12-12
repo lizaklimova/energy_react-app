@@ -16,18 +16,18 @@ export const SocialsItem = styled.li`
   justify-content: center;
   border-radius: 10px;
   border: 1px solid rgba(36, 36, 36, 0.1);
-  box-shadow: ${({ theme: { theme } }) => theme.shadows.volume};
-  transition: ${({ theme: { theme } }) =>
-    ` background-color ${theme.transitions.linear}, opacity ${theme.transitions.linear}`};
+  box-shadow: ${({ theme }) => theme.shadowVolume};
+  transition: ${({ theme }) =>
+    ` background-color ${theme.linear}, opacity ${theme.linear}`};
 
   &:hover,
   &:focus {
-    background-color: ${({ theme: { theme } }) => theme.colors.accentBlack};
+    background-color: ${({ theme }) => theme.text};
     opacity: 0.8;
   }
   &:hover svg,
   &:focus svg {
-    fill: ${({ theme: { theme } }) => theme.colors.accentWhite};
+    fill: ${({ theme }) => theme.background};
   }
 `;
 export const SocialsLink = styled.a`
@@ -38,5 +38,5 @@ export const SocialsLink = styled.a`
 
 export const SocialsIcon = styled.svg`
   opacity: 0.8;
-  transition: ${({ theme: { theme } }) => `fill ${theme.transitions.linear}`};
+  transition: ${({ theme }) => `fill ${theme.linear}`};
 `;

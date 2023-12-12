@@ -2,27 +2,32 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const MenuBackdrop = styled.div`
-  /* width: 100vw;
-  height: 100vh; */
-  overflow: hidden;
-`;
-export const Menu = styled.div`
+  width: 100vw;
+  height: 100vh;
   position: absolute;
+`;
+
+export const Menu = styled.div`
+  position: fixed;
   top: 0;
   left: -100%;
+  z-index: 3;
   bottom: 0;
   width: 50vw;
   height: 100vh;
-  background-color: ${({ theme: { theme } }) => theme.colors.accentBlack};
+  background-color: ${({ theme }) => theme.backdrop};
   padding: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: ${({ theme: { theme } }) => `left ${theme.transitions.eased}`};
+  transition: ${({ theme }) => `left ${theme.eased}, opacity ${theme.eased}`};
+  opacity: 0;
+
   &.is-open {
     left: 0;
+    opacity: 1;
   }
 `;
 
@@ -34,7 +39,7 @@ export const CloseMenuIcon = styled.svg`
   position: absolute;
   top: 20px;
   right: 20px;
-  stroke: ${({ theme: { theme } }) => theme.colors.accentWhite};
+  stroke: ${({ theme }) => theme.background};
 `;
 
 export const MenuNavList = styled.ul`
@@ -45,7 +50,7 @@ export const MenuNavList = styled.ul`
 `;
 
 export const MenuNavLink = styled(Link)`
-  color: ${({ theme: { theme } }) => theme.colors.accentWhite};
+  color: ${({ theme }) => theme.background};
 `;
 
 export const MenuSocialsList = styled.ul`
@@ -62,9 +67,9 @@ export const MenuSocialsItem = styled.li`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid ${({ theme: { theme } }) => theme.colors.accentWhite};
-  box-shadow: rgba(251, 251, 251, 0.744) 0px 1px 0px,
-    rgba(255, 255, 255, 0.599) 0px 0px 8px;
+  border: 1px solid ${({ theme }) => theme.background};
+  box-shadow: ${({ theme }) => theme.shadowVolumeMob};
+
   opacity: 0.8;
 `;
 export const MenuSocialsLink = styled.a`
@@ -73,5 +78,5 @@ export const MenuSocialsLink = styled.a`
   justify-content: center;
 `;
 export const MenuSocialsIcon = styled.svg`
-  fill: ${({ theme: { theme } }) => theme.colors.accentWhite};
+  fill: ${({ theme }) => theme.background};
 `;

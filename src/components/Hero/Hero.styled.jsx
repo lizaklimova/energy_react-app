@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 export const HeroSection = styled.section`
-  padding: 84px 0 40px 0;
+  padding: 40px 0 40px 0;
 
   @media screen and (min-width: 768px) {
     padding: 100px 0 64px 0;
@@ -107,8 +107,8 @@ export const HeroHashesDeskList = styled.ul`
 export const HeroHashesDeskItem = styled.li`
   border-radius: 30px;
   padding: 4px 14px;
-  border: ${({ theme: { theme } }) => `1px solid ${theme.colors.accentBlack}`};
-  box-shadow: ${({ theme: { theme } }) => theme.shadows.volume};
+  border: ${({ theme }) => `1px solid ${theme.text}`};
+  box-shadow: ${({ theme }) => theme.shadowVolume};
 `;
 
 export const HeroHashesDeskItemSpan = styled.span`

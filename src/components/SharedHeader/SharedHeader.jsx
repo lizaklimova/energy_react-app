@@ -19,8 +19,8 @@ const SharedHeader = () => {
           <BurgerBtn type="button">
             <BurgerIcon onClick={() => setIsMenuOpen(true)} />
           </BurgerBtn>
-          <MobMenu isOpened={isMenuOpen} setOpening={setIsMenuOpen} />
         </HeaderWrap>
+        <MobMenu isOpened={isMenuOpen} setOpening={setIsMenuOpen} />
       </MainContainer>
     </header>
   );
