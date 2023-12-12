@@ -1,6 +1,8 @@
 const commonVars = {
   linear: '300ms linear',
   eased: '400ms ease-out',
+  accentWhite: '#F4F4F4',
+  accentBlack: '#242424',
   orange: '#EEA10C',
   green: '#098115',
 };

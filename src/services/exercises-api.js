@@ -11,12 +11,6 @@ export async function fetchFilter(page, perPage, filter) {
   return data;
 }
 
-// const filters = {
-//   bodyParts: 'Body%20parts',
-//   muscles: 'Muscles',
-//   equipment: 'Equipment',
-// };
-
 //   get for cards
 export async function fetchCards(page, perPage, filter, name) {
   return await axios
@@ -37,7 +31,8 @@ export async function fetchExercise(id) {
 
 //quote of the day
 export async function fetchQuote() {
-  return await axios.get('/quote').then(response => response.data);
+  const { data } = await axios.get('/quote');
+  return data;
 }
 
 //add rating

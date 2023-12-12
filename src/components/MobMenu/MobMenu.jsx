@@ -18,7 +18,8 @@ const MobMenu = ({ isOpened, setOpening }) => {
   };
 
   return (
-    <MenuBackdrop onClick={handleBackdropClose}>
+    <>
+      {isOpened && <MenuBackdrop onClick={handleBackdropClose} />}
       <Menu className={isOpened ? 'is-open' : ''}>
         <CloseMenuBtn type="button" onClick={() => setOpening(false)}>
           <CloseMenuIcon width="32" height="32">
@@ -72,7 +73,7 @@ const MobMenu = ({ isOpened, setOpening }) => {
           </MenuSocialsItem>
         </MenuSocialsList>
       </Menu>
-    </MenuBackdrop>
+    </>
   );
 };
 

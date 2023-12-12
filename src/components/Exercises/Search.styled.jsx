@@ -6,12 +6,12 @@ export const SearchWrap = styled.div`
   width: 100%;
   height: 44px;
 
-  @media screen and (min-width: 428px) {
+  @media screen and (min-width: 375px) {
     width: 335px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 221px;
+    width: 271px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -51,16 +51,20 @@ export const SearchInput = styled.input`
 
   &:focus + label {
     outline: none;
-    top: -12px;
+    top: -10px;
     background-color: ${({ theme }) => theme.background};
+
+    @media screen and (min-width: 768px) {
+      top: -12px;
+    }
   }
 
-  @media screen and (min-width: 428px) {
+  @media screen and (min-width: 375px) {
     width: 335px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 221px;
+    width: 271px;
   }
 
   @media screen and (min-width: 1440px) {

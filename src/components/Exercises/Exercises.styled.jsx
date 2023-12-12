@@ -11,6 +11,14 @@ export const ExercisesTitle = styled.h2`
   letter-spacing: -0.56px;
   margin-bottom: 40px;
 
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    margin-bottom: inherit;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 44px;
     line-height: 1.09;
@@ -43,4 +51,24 @@ export const FiltersAndSearchWrap = styled.div`
     align-items: baseline;
     gap: 32px;
   }
+`;
+
+export const FiltersCardsAndInfoWrap = styled.div`
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 32px;
+  }
+`;
+
+export const BreadCrumb = styled.p`
+  display: inline-block;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.48px;
+  opacity: 0.5;
 `;

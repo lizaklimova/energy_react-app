@@ -8,7 +8,8 @@ export const GlobalStyles = createGlobalStyle`
   line-height: 1.29;
   margin: 0;
   background-color: ${({ theme }) => theme.background};
-color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.text};
+  overflow-x: hidden;
 }
 
 h1,
@@ -50,6 +51,26 @@ img {
 }
 svg {
   fill: currentColor;
+}
+
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: #bbbbbb; 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: ${({ theme }) => theme.accentBlack}; 
+  border-radius: 6px; 
+}
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color:${({ theme }) => `#bbbbbb ${theme.accentBlack}`};  
 }
 
 `;

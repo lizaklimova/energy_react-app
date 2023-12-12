@@ -2,32 +2,42 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const MenuBackdrop = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+  }
 `;
 
 export const Menu = styled.div`
-  position: fixed;
-  top: 0;
-  left: -100%;
-  z-index: 3;
-  bottom: 0;
-  width: 50vw;
-  height: 100vh;
-  background-color: ${({ theme }) => theme.backdrop};
-  padding: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: ${({ theme }) => `left ${theme.eased}, opacity ${theme.eased}`};
-  opacity: 0;
+  display: none;
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 3;
+    bottom: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: ${({ theme }) => theme.backdrop};
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: ${({ theme }) => `left ${theme.eased}, opacity ${theme.eased}`};
+    opacity: 0;
 
-  &.is-open {
-    left: 0;
-    opacity: 1;
+    &.is-open {
+      left: 0;
+      opacity: 1;
+    }
   }
 `;
 
