@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Notify } from 'notiflix';
 import sprite from 'img/sprite.svg';
+import { fetchQuote } from 'services/exercises-api';
+import Spinner from 'components/Loaders/Spinner';
 import {
   QuoteBlock,
   ManIcon,
@@ -10,11 +12,11 @@ import {
   QuoteAuthor,
   CommasIcon,
 } from './Quote.styled';
-import { fetchQuote } from 'services/exercises-api';
 
 const Quote = () => {
-  const [quote, setQuote] = useState(() => localStorage.getItem('quote') || {});
-
+  const [quote, setQuote] = useState(
+    () => JSON.parse(localStorage.getItem('quote')) ?? {}
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -22,34 +24,41 @@ const Quote = () => {
       try {
         setIsLoading(true);
         const result = await fetchQuote();
-        setQuote({ ...result, date: new Date().getDate() });
 
-        localStorage.setItem('quote', JSON.stringify(quote));
+        const updatedQuote = { ...result, date: new Date().getDate() };
+
+        setQuote(updatedQuote);
+        localStorage.setItem('quote', JSON.stringify(updatedQuote));
       } catch ({ message }) {
         Notify.info(message);
       } finally {
         setIsLoading(false);
       }
     };
-    if (!quote.date || new Date().getDate() !== quote.date) {
+    if (new Date().getDate() !== quote.date) {
       getQuote();
     }
   }, [quote]);
 
   return (
     <QuoteBlock>
-      <ManIcon width={34} height={32}>
-        <use href={`${sprite}#icon-man`}></use>
-      </ManIcon>
-
-      <QuoteTextWrap>
-        <QuoteTitle>Quote of the day</QuoteTitle>
-        <QuoteText>{quote.quote}</QuoteText>
-        <QuoteAuthor>{quote.author}</QuoteAuthor>
-      </QuoteTextWrap>
-      <CommasIcon width={20} height={20}>
-        <use href={`${sprite}#icon-commas`}></use>
-      </CommasIcon>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <ManIcon width={34} height={32}>
+            <use href={`${sprite}#icon-man`}></use>
+          </ManIcon>
+          <QuoteTextWrap>
+            <QuoteTitle>Quote of the day</QuoteTitle>
+            <QuoteText>{quote.quote}</QuoteText>
+            <QuoteAuthor>{quote.author}</QuoteAuthor>
+          </QuoteTextWrap>
+          <CommasIcon width={20} height={20}>
+            <use href={`${sprite}#icon-commas`}></use>
+          </CommasIcon>
+        </>
+      )}
     </QuoteBlock>
   );
 };

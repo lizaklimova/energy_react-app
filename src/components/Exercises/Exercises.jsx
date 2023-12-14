@@ -6,7 +6,7 @@ import Search from './Search';
 import Filters from './Filters';
 import FilterCardsList from './FilterCardList';
 import Info from 'components/Info/Info';
-import Loader from 'components/Loader/Loader';
+import Loader from 'components/Loaders/Loader';
 import {
   ExercisesSection,
   ExercisesTitle,
@@ -17,7 +17,7 @@ import {
 } from './Exercises.styled';
 
 const Exercises = () => {
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
   const [filter, setFilter] = useState('Body%20parts');
   const [filterResults, setFilterResults] = useState([]);
   const [breadCrumb, setBreadCrumb] = useState('');
@@ -27,7 +27,7 @@ const Exercises = () => {
     const getCardsFromFilter = async () => {
       try {
         setIsLoading(true);
-        const resp = await fetchFilter(page, 10, filter);
+        const resp = await fetchFilter(1, 10, filter);
 
         setFilterResults(resp.results);
       } catch ({ message }) {
@@ -37,7 +37,7 @@ const Exercises = () => {
       }
     };
     getCardsFromFilter();
-  }, [filter, page]);
+  }, [filter]);
 
   return (
     <>
