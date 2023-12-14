@@ -11,7 +11,7 @@ const MainPage = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <>
+    <main>
       <MainContainer>
         <FormControlLabel
           sx={{
@@ -26,7 +26,7 @@ const MainPage = () => {
       <Hero />
       <Exercises />
       <Footer />
-    </>
+    </main>
   );
 };
 

@@ -4,6 +4,8 @@ export const ExercisesSection = styled.section`
   padding: 40px 0 80px 0;
 `;
 
+export const ExercisesPaginationWrap = styled.div``;
+
 export const ExercisesTitle = styled.h2`
   font-size: 28px;
   font-weight: 400;

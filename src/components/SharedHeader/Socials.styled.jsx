@@ -2,11 +2,13 @@ import { styled } from 'styled-components';
 
 export const SocialsList = styled.ul`
   @media screen and (max-width: 767px) {
-    display: ${({ variant }) => (variant === 'footer' ? 'flex' : 'none')};
+    display: ${({ $variant }) => ($variant === 'footer' ? 'flex' : 'none')};
   }
+  /* color: #525050; */
   display: flex;
   justify-content: center;
   gap: 12px;
+  margin-top: ${({ $menu }) => ($menu ? 'auto' : 'unset')};
 `;
 export const SocialsItem = styled.li`
   width: 44px;
@@ -15,13 +17,13 @@ export const SocialsItem = styled.li`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: ${({ theme, variant }) =>
+  border: ${({ theme, $variant }) =>
     `1px solid ${
-      variant === 'footer' ? theme.headerOpacity : theme.footerOpacity
+      $variant === 'footer' ? theme.headerOpacity : theme.footerOpacity
     }`};
 
-  box-shadow: ${({ theme, variant }) =>
-    variant === 'footer'
+  box-shadow: ${({ theme, $variant }) =>
+    $variant === 'footer'
       ? `${theme.headerOpacity} 0px 3px 8px`
       : theme.shadowVolume};
   opacity: 1;
@@ -30,15 +32,15 @@ export const SocialsItem = styled.li`
 
   &:hover,
   &:focus {
-    background-color: ${({ theme, variant }) =>
-      variant === 'footer' ? theme.background : theme.text};
+    background-color: ${({ theme, $variant }) =>
+      $variant === 'footer' ? theme.background : theme.text};
     opacity: 0.8;
   }
 
   &:hover svg,
   &:focus svg {
-    fill: ${({ theme, variant }) =>
-      variant === 'footer' ? theme.text : theme.background};
+    fill: ${({ theme, $variant }) =>
+      $variant === 'footer' ? theme.text : theme.background};
   }
 `;
 
@@ -49,8 +51,8 @@ export const SocialsLink = styled.a`
 `;
 
 export const SocialsIcon = styled.svg`
-  fill: ${({ theme, variant }) =>
-    variant === 'footer' ? theme.background : theme.text};
+  fill: ${({ theme, $variant }) =>
+    $variant === 'footer' ? theme.background : theme.text};
   opacity: 0.8;
   transition: ${({ theme }) => `fill ${theme.linear}`};
 `;

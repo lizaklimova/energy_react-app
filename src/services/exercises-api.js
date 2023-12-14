@@ -12,21 +12,17 @@ export async function fetchFilter(page, perPage, filter) {
 }
 
 //   get for cards
-export async function fetchCards(page, perPage, filter, name) {
-  return await axios
-    .get(`/exercises?${filter}=${name}&page=${page}&limit=${perPage}`)
-    .then(response => response.data);
+export async function fetchCards(page, perPage, filter, name, query = '') {
+  const { data } = await axios.get(
+    `/exercises?${filter}=${name}&keyword=${query}&page=${page}&limit=${perPage}`
+  );
+  return data;
 }
-
-// const cardFilter = {
-//   bodyParts: 'bodypart',
-//   muscles: 'muscles',
-//   equipment: 'equipment',
-// };
 
 // get for exercise information
 export async function fetchExercise(id) {
-  return await axios.get(`/exercises/${id}`).then(response => response.data);
+  const { data } = await axios.get(`/exercises/${id}`);
+  return data;
 }
 
 //quote of the day
@@ -36,23 +32,21 @@ export async function fetchQuote() {
 }
 
 //add rating
-export async function patchRating(id, data) {
-  return await axios
-    .patch(`/exercises/${id}/rating`, data, {
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-    .then(response => response.data);
+export async function patchRating(id, rating) {
+  const { data } = await axios.patch(`/exercises/${id}/rating`, rating, {
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+  return data;
 }
 
 //subscribe
-export async function subscribe(data) {
-  return await axios
-    .post(`/subscription`, data, {
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
-    .then(response => response.data);
+export async function subscribe(info) {
+  const { data } = await axios.post(`/subscription`, info, {
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+  return data;
 }

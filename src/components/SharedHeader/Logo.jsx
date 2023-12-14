@@ -6,7 +6,7 @@ const Logo = ({ variant }) => {
   return (
     <Link to="/">
       <LogoIconWrap>
-        <LogoIcon width="132" height="24" variant={variant}>
+        <LogoIcon width="132" height="24" $variant={variant}>
           <use href={`${sprite}#icon-logo`}></use>
         </LogoIcon>
       </LogoIconWrap>

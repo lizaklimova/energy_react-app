@@ -10,7 +10,10 @@ export const GlobalStyles = createGlobalStyle`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
   overflow-x: hidden;
+
 }
+
+
 
 h1,
 h2,

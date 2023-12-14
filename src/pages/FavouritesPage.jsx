@@ -1,4 +1,4 @@
 const FavouritesPage = () => {
-  return <div>Fav</div>;
+  return <main>Fav</main>;
 };
 export default FavouritesPage;

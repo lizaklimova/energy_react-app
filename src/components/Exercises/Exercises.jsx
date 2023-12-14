@@ -7,8 +7,11 @@ import Filters from './Filters';
 import FilterCardsList from './FilterCardList';
 import Info from 'components/Info/Info';
 import Loader from 'components/Loaders/Loader';
+import PaginationList from 'components/PaginationList/PaginationList';
+import ExercisesCardsList from './ExercisesCardsList';
 import {
   ExercisesSection,
+  ExercisesPaginationWrap,
   ExercisesTitle,
   BreadCrumb,
   ExersisesPositionWrap,
@@ -17,19 +20,29 @@ import {
 } from './Exercises.styled';
 
 const Exercises = () => {
-  // const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1);
+  const [totalPgs, setTotalPgs] = useState(1);
   const [filter, setFilter] = useState('Body%20parts');
   const [filterResults, setFilterResults] = useState([]);
   const [breadCrumb, setBreadCrumb] = useState('');
+  const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getCardsFromFilter = async () => {
       try {
         setIsLoading(true);
-        const resp = await fetchFilter(1, 10, filter);
+
+        let resp = null;
+
+        if (window.innerWidth >= 768) {
+          resp = await fetchFilter(page, 12, filter);
+        } else {
+          resp = await fetchFilter(page, 10, filter);
+        }
 
         setFilterResults(resp.results);
+        setTotalPgs(resp.totalPages);
       } catch ({ message }) {
         Notify.info(message);
       } finally {
@@ -37,7 +50,11 @@ const Exercises = () => {
       }
     };
     getCardsFromFilter();
-  }, [filter]);
+  }, [filter, page]);
+
+  const searchExercisesCard = q => {
+    setQuery(q);
+  };
 
   return (
     <>
@@ -57,16 +74,39 @@ const Exercises = () => {
               )}
             </ExercisesTitle>
             <FiltersAndSearchWrap>
-              <Search />
-              <Filters setFilter={setFilter} />
+              {breadCrumb && <Search onChange={searchExercisesCard} />}
+              <Filters
+                setFilter={setFilter}
+                resetPage={setPage}
+                page={page}
+                resetBreadCrumb={setBreadCrumb}
+              />
             </FiltersAndSearchWrap>
           </ExersisesPositionWrap>
 
           <FiltersCardsAndInfoWrap>
-            <FilterCardsList
-              filters={filterResults}
-              setBreadCrumb={setBreadCrumb}
-            />
+            {!breadCrumb ? (
+              <ExercisesPaginationWrap>
+                <FilterCardsList
+                  filters={filterResults}
+                  setBreadCrumb={setBreadCrumb}
+                />
+                <PaginationList
+                  pageQty={totalPgs}
+                  pg={page}
+                  onChange={setPage}
+                />
+              </ExercisesPaginationWrap>
+            ) : (
+              <ExercisesCardsList
+                page={page}
+                filter={filter}
+                name={breadCrumb}
+                query={query}
+                setPage={setPage}
+              />
+            )}
+
             <Info />
           </FiltersCardsAndInfoWrap>
         </ExercisesSection>

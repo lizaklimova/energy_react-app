@@ -15,7 +15,8 @@ export const FiltersList = styled.ul`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 100%;
+    width: 900px;
+    padding: 20px 0;
   }
 `;
 

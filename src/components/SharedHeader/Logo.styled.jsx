@@ -7,16 +7,16 @@ export const LogoIconWrap = styled.div`
 `;
 
 export const LogoIcon = styled.svg`
-  fill: ${({ theme, variant }) =>
-    variant === 'footer' ? theme.background : theme.text};
+  fill: ${({ theme, $variant }) =>
+    $variant === 'footer' ? theme.background : theme.text};
 
   transition: ${({ theme }) => theme.eased};
 
   &:hover,
   &:focus {
-    filter: ${({ theme, variant }) =>
+    filter: ${({ theme, $variant }) =>
       `drop-shadow(-1px 1px 5px  ${
-        variant === 'footer' ? theme.background : theme.text
+        $variant === 'footer' ? theme.background : theme.text
       })`};
   }
 `;

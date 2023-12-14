@@ -1,17 +1,22 @@
-import {
-  SearchWrap,
-  SearchInputLabel,
-  SearchInput,
-  SearchIcon,
-} from './Search.styled';
+import { SearchForm, SearchInput, SearchIcon } from './Search.styled';
 
-const Search = () => {
+const Search = ({ onChange }) => {
+  const handleSearch = e => {
+    const query = e.target.value.toLowerCase().trim();
+    onChange(query);
+  };
+
   return (
-    <SearchWrap>
-      <SearchInput id="searchInput" type="text" autoComplete="off" />
-      <SearchInputLabel htmlFor="searchInput">Search</SearchInputLabel>
+    <SearchForm onChange={handleSearch}>
+      <SearchInput
+        id="searchInput"
+        type="text"
+        autoComplete="off"
+        placeholder="Search"
+      />
+
       <SearchIcon />
-    </SearchWrap>
+    </SearchForm>
   );
 };
 

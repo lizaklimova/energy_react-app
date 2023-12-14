@@ -57,36 +57,12 @@ export const MenuNavList = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const MenuNavLink = styled(Link)`
   color: ${({ theme }) => theme.background};
-`;
-
-export const MenuSocialsList = styled.ul`
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-`;
-export const MenuSocialsItem = styled.li`
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.background};
-  box-shadow: ${({ theme }) => theme.shadowVolumeMob};
-
-  opacity: 0.8;
-`;
-export const MenuSocialsLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-export const MenuSocialsIcon = styled.svg`
-  fill: ${({ theme }) => theme.background};
 `;
