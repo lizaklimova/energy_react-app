@@ -44,11 +44,8 @@ export const FilterItemBlock = styled.div`
   height: 225px;
   border-radius: 12px;
 
-  background-image: ${props =>
-    `linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${props.$img})`};
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: ${props =>
+    `linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%), url(${props.$img}) no-repeat center / cover`};
 
   @media screen and (min-width: 1440px) {
     height: 242px;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import sprite from 'img/sprite.svg';
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import {
@@ -19,7 +20,17 @@ import {
   ExerciseInfo,
 } from './ExerciseCard.styled';
 
-const ExerciseCard = ({ rating, exercise, calories, part, target }) => {
+const ExerciseCard = ({
+  id,
+  rating,
+  exercise,
+  calories,
+  part,
+  target,
+  openModal,
+}) => {
+  const [exerciseId, setExerciseId] = useState(null);
+  console.log(exerciseId);
   return (
     <Card>
       <WorkoutBtnDiv>
@@ -32,7 +43,12 @@ const ExerciseCard = ({ rating, exercise, calories, part, target }) => {
             </RatingIcon>
           </RatingWrap>
         </WorkoutDiv>
-        <StartBtn type="button">
+        <StartBtn
+          type="button"
+          onClick={() => {
+            setExerciseId(id);
+          }}
+        >
           <span>Start</span>
           <StartIcon width={16} height={16}>
             <use href={`${sprite}#icon-arrow`}></use>
