@@ -13,8 +13,9 @@ const FavouritesPage = lazy(() => import('pages/FavouritesPage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 
 export const App = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  const currentTheme = theme === 'dark' ? darkTheme : lightTheme;
+  const { theme } = useContext(ThemeContext);
+
+  const currentTheme = theme === 'light' ? lightTheme : darkTheme;
 
   Notiflix.Notify.init({
     timeout: 5000,

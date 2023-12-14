@@ -1,12 +1,12 @@
 import { styled } from 'styled-components';
 
 export const SocialsList = styled.ul`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
+  @media screen and (max-width: 767px) {
+    display: ${({ variant }) => (variant === 'footer' ? 'flex' : 'none')};
   }
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 `;
 export const SocialsItem = styled.li`
   width: 44px;
@@ -15,21 +15,33 @@ export const SocialsItem = styled.li`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid rgba(36, 36, 36, 0.1);
-  box-shadow: ${({ theme }) => theme.shadowVolume};
+  border: ${({ theme, variant }) =>
+    `1px solid ${
+      variant === 'footer' ? theme.headerOpacity : theme.footerOpacity
+    }`};
+
+  box-shadow: ${({ theme, variant }) =>
+    variant === 'footer'
+      ? `${theme.headerOpacity} 0px 3px 8px`
+      : theme.shadowVolume};
+  opacity: 1;
   transition: ${({ theme }) =>
     ` background-color ${theme.linear}, opacity ${theme.linear}`};
 
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.text};
+    background-color: ${({ theme, variant }) =>
+      variant === 'footer' ? theme.background : theme.text};
     opacity: 0.8;
   }
+
   &:hover svg,
   &:focus svg {
-    fill: ${({ theme }) => theme.background};
+    fill: ${({ theme, variant }) =>
+      variant === 'footer' ? theme.text : theme.background};
   }
 `;
+
 export const SocialsLink = styled.a`
   display: flex;
   align-items: center;
@@ -37,6 +49,8 @@ export const SocialsLink = styled.a`
 `;
 
 export const SocialsIcon = styled.svg`
+  fill: ${({ theme, variant }) =>
+    variant === 'footer' ? theme.background : theme.text};
   opacity: 0.8;
   transition: ${({ theme }) => `fill ${theme.linear}`};
 `;

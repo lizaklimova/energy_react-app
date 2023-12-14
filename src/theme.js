@@ -19,6 +19,8 @@ export const darkTheme = {
     'rgba(244, 244, 244, 0.1) 0px 10px 20px, rgba(244, 244, 244, 0.1) 0px 6px 6px',
   shadowCardsHover: 'rgba(244, 244, 244, 0.3) 0px 5px 15px',
   shadowWide: 'rgba(244, 244, 244, 0.3) 0px 20px 30px -10px',
+  headerOpacity: 'rgba(36, 36, 36, 0.10)',
+  footerOpacity: 'rgba(244, 244, 244, 0.1)',
 };
 
 export const lightTheme = {
@@ -33,4 +35,6 @@ export const lightTheme = {
     'box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;',
   shadowCardsHover: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
   shadowWide: 'rgb(38, 57, 77) 0px 20px 30px -10px;',
+  headerOpacity: 'rgba(244, 244, 244, 0.1)',
+  footerOpacity: 'rgba(36, 36, 36, 0.10)',
 };

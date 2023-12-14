@@ -8,7 +8,7 @@ export const QuoteBlock = styled.div`
   padding: 20px;
   margin-bottom: 20px;
   display: flex;
-
+  justify-content: center;
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
     width: calc((100% - 16px) / 2);
