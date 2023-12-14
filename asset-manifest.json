@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/energy_react-app/static/css/main.84e0887e.css",
-    "main.js": "/energy_react-app/static/js/main.85cd5b44.js",
-    "static/js/549.a566aa1b.chunk.js": "/energy_react-app/static/js/549.a566aa1b.chunk.js",
-    "static/js/224.4bc94986.chunk.js": "/energy_react-app/static/js/224.4bc94986.chunk.js",
+    "main.js": "/energy_react-app/static/js/main.9c62ee09.js",
+    "static/js/908.bf0c88dd.chunk.js": "/energy_react-app/static/js/908.bf0c88dd.chunk.js",
+    "static/js/224.52be8bc4.chunk.js": "/energy_react-app/static/js/224.52be8bc4.chunk.js",
     "static/js/520.3c7a82bb.chunk.js": "/energy_react-app/static/js/520.3c7a82bb.chunk.js",
-    "static/js/448.b49aa799.chunk.js": "/energy_react-app/static/js/448.b49aa799.chunk.js",
+    "static/js/698.495b85e7.chunk.js": "/energy_react-app/static/js/698.495b85e7.chunk.js",
     "static/media/hero-women-desk2x.webp": "/energy_react-app/static/media/hero-women-desk2x.671f1dfcb0ff2e16e8eb.webp",
     "static/media/hero-women-tab2x.webp": "/energy_react-app/static/media/hero-women-tab2x.5408f852b22ce44d1063.webp",
     "static/media/hero-women-mob2x.webp": "/energy_react-app/static/media/hero-women-mob2x.2c69035cc75302b528a0.webp",
@@ -21,19 +21,19 @@
     "static/media/hero-women-mob.jpg": "/energy_react-app/static/media/hero-women-mob.2fb7f825bd0f6c4c2001.jpg",
     "static/media/info-girls-mob2x.webp": "/energy_react-app/static/media/info-girls-mob2x.90439087ff3154fdb51b.webp",
     "static/media/info-girls-mob2x.jpg": "/energy_react-app/static/media/info-girls-mob2x.897c36abc4c90d0ab4bc.jpg",
-    "static/media/sprite.svg": "/energy_react-app/static/media/sprite.291740decd8f63c84614c9d9a3fd11df.svg",
+    "static/media/sprite.svg": "/energy_react-app/static/media/sprite.123faae85ebef45c2a950a30da0e7830.svg",
     "static/media/hero-legs-desk.webp": "/energy_react-app/static/media/hero-legs-desk.ed1d71485c8d9bc7b6ac.webp",
     "static/media/info-girls-mob.webp": "/energy_react-app/static/media/info-girls-mob.40bf99f053aef1e989e4.webp",
     "index.html": "/energy_react-app/index.html",
     "main.84e0887e.css.map": "/energy_react-app/static/css/main.84e0887e.css.map",
-    "main.85cd5b44.js.map": "/energy_react-app/static/js/main.85cd5b44.js.map",
-    "549.a566aa1b.chunk.js.map": "/energy_react-app/static/js/549.a566aa1b.chunk.js.map",
-    "224.4bc94986.chunk.js.map": "/energy_react-app/static/js/224.4bc94986.chunk.js.map",
+    "main.9c62ee09.js.map": "/energy_react-app/static/js/main.9c62ee09.js.map",
+    "908.bf0c88dd.chunk.js.map": "/energy_react-app/static/js/908.bf0c88dd.chunk.js.map",
+    "224.52be8bc4.chunk.js.map": "/energy_react-app/static/js/224.52be8bc4.chunk.js.map",
     "520.3c7a82bb.chunk.js.map": "/energy_react-app/static/js/520.3c7a82bb.chunk.js.map",
-    "448.b49aa799.chunk.js.map": "/energy_react-app/static/js/448.b49aa799.chunk.js.map"
+    "698.495b85e7.chunk.js.map": "/energy_react-app/static/js/698.495b85e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84e0887e.css",
-    "static/js/main.85cd5b44.js"
+    "static/js/main.9c62ee09.js"
   ]
 }
