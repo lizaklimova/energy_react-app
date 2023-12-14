@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/energy_react-app/static/css/main.84e0887e.css",
-    "main.js": "/energy_react-app/static/js/main.6403f7b4.js",
+    "main.js": "/energy_react-app/static/js/main.85cd5b44.js",
     "static/js/549.a566aa1b.chunk.js": "/energy_react-app/static/js/549.a566aa1b.chunk.js",
     "static/js/224.4bc94986.chunk.js": "/energy_react-app/static/js/224.4bc94986.chunk.js",
     "static/js/520.3c7a82bb.chunk.js": "/energy_react-app/static/js/520.3c7a82bb.chunk.js",
@@ -26,7 +26,7 @@
     "static/media/info-girls-mob.webp": "/energy_react-app/static/media/info-girls-mob.40bf99f053aef1e989e4.webp",
     "index.html": "/energy_react-app/index.html",
     "main.84e0887e.css.map": "/energy_react-app/static/css/main.84e0887e.css.map",
-    "main.6403f7b4.js.map": "/energy_react-app/static/js/main.6403f7b4.js.map",
+    "main.85cd5b44.js.map": "/energy_react-app/static/js/main.85cd5b44.js.map",
     "549.a566aa1b.chunk.js.map": "/energy_react-app/static/js/549.a566aa1b.chunk.js.map",
     "224.4bc94986.chunk.js.map": "/energy_react-app/static/js/224.4bc94986.chunk.js.map",
     "520.3c7a82bb.chunk.js.map": "/energy_react-app/static/js/520.3c7a82bb.chunk.js.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.84e0887e.css",
-    "static/js/main.6403f7b4.js"
+    "static/js/main.85cd5b44.js"
   ]
 }
