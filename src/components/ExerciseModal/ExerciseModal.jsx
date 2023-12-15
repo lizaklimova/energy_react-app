@@ -1,10 +1,23 @@
 import sprite from 'img/sprite.svg';
+import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import {
   ExercModalBackdrop,
   ExercModal,
   ModalCloseBtn,
   ModalCloseIcon,
   ModalGifBlock,
+  ExercName,
+  RatingDiv,
+  RatingValue,
+  RatingList,
+  ExercInfoList,
+  ExercInfoItem,
+  ExercInfoName,
+  ExercInfoValue,
+  ExercDescr,
+  ModalBtnsList,
+  AddRemoveBtn,
+  GiveRatingBtn,
 } from './ExerciseModal.styled';
 import { MainContainer } from 'components/App/App.styled';
 
@@ -32,11 +45,11 @@ const ExerciseModal = ({
 
           <ModalGifBlock $gifUrl={gif}></ModalGifBlock>
 
-          <h3>{name}</h3>
+          <ExercName>{capitalizeFirstLetter(name)}</ExercName>
 
-          <div>
-            <span>{rating.toFixed(1)}</span>
-            <ul>
+          <RatingDiv>
+            <RatingValue>{rating.toFixed(1)}</RatingValue>
+            <RatingList>
               <li>
                 <svg width={18} height={18}>
                   <use href={`${sprite}#icon-star`}></use>
@@ -62,37 +75,37 @@ const ExerciseModal = ({
                   <use href={`${sprite}#icon-star`}></use>
                 </svg>
               </li>
-            </ul>
-          </div>
+            </RatingList>
+          </RatingDiv>
 
           <hr />
 
-          <ul>
-            <li>
-              <p>Target</p>
-              <p>{target}</p>
-            </li>
-            <li>
-              <p>Body part</p>
-              <p>{part}</p>
-            </li>
-            <li>
-              <p>Equipment</p>
-              <p>{equip}</p>
-            </li>
-            <li>
-              <p>Popular</p>
-              <p>{popular}</p>
-            </li>
-          </ul>
+          <ExercInfoList>
+            <ExercInfoItem>
+              <ExercInfoName>Target</ExercInfoName>
+              <ExercInfoValue>{capitalizeFirstLetter(target)}</ExercInfoValue>
+            </ExercInfoItem>
+            <ExercInfoItem>
+              <ExercInfoName>Body part</ExercInfoName>
+              <ExercInfoValue>{capitalizeFirstLetter(part)}</ExercInfoValue>
+            </ExercInfoItem>
+            <ExercInfoItem>
+              <ExercInfoName>Equipment</ExercInfoName>
+              <ExercInfoValue>{capitalizeFirstLetter(equip)}</ExercInfoValue>
+            </ExercInfoItem>
+            <ExercInfoItem>
+              <ExercInfoName>Popular</ExercInfoName>
+              <ExercInfoValue>{popular}</ExercInfoValue>
+            </ExercInfoItem>
+          </ExercInfoList>
 
           <hr />
 
-          <p>{descr}</p>
+          <ExercDescr>{descr}</ExercDescr>
 
-          <ul>
+          <ModalBtnsList>
             <li>
-              <button type="button">
+              <AddRemoveBtn type="button">
                 Add to favorites
                 <svg width={18} height={18}>
                   <use href={`${sprite}#icon-heart`}></use>
@@ -100,12 +113,12 @@ const ExerciseModal = ({
                 {/* <svg width={18} height={18}>
                 <use href={`${sprite}#icon-trash`}></use>
               </svg> */}
-              </button>
+              </AddRemoveBtn>
             </li>
             <li>
-              <button type="button">Give rating</button>
+              <GiveRatingBtn type="button">Give rating</GiveRatingBtn>
             </li>
-          </ul>
+          </ModalBtnsList>
         </ExercModal>
       </MainContainer>
     </ExercModalBackdrop>
