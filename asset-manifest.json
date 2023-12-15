@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/energy_react-app/static/css/main.84e0887e.css",
-    "main.js": "/energy_react-app/static/js/main.715715cc.js",
-    "static/js/393.c3bc81c6.chunk.js": "/energy_react-app/static/js/393.c3bc81c6.chunk.js",
+    "main.js": "/energy_react-app/static/js/main.3116d783.js",
+    "static/js/393.a02a957a.chunk.js": "/energy_react-app/static/js/393.a02a957a.chunk.js",
     "static/js/224.52be8bc4.chunk.js": "/energy_react-app/static/js/224.52be8bc4.chunk.js",
     "static/js/520.3c7a82bb.chunk.js": "/energy_react-app/static/js/520.3c7a82bb.chunk.js",
     "static/js/698.495b85e7.chunk.js": "/energy_react-app/static/js/698.495b85e7.chunk.js",
@@ -26,14 +26,14 @@
     "static/media/info-girls-mob.webp": "/energy_react-app/static/media/info-girls-mob.40bf99f053aef1e989e4.webp",
     "index.html": "/energy_react-app/index.html",
     "main.84e0887e.css.map": "/energy_react-app/static/css/main.84e0887e.css.map",
-    "main.715715cc.js.map": "/energy_react-app/static/js/main.715715cc.js.map",
-    "393.c3bc81c6.chunk.js.map": "/energy_react-app/static/js/393.c3bc81c6.chunk.js.map",
+    "main.3116d783.js.map": "/energy_react-app/static/js/main.3116d783.js.map",
+    "393.a02a957a.chunk.js.map": "/energy_react-app/static/js/393.a02a957a.chunk.js.map",
     "224.52be8bc4.chunk.js.map": "/energy_react-app/static/js/224.52be8bc4.chunk.js.map",
     "520.3c7a82bb.chunk.js.map": "/energy_react-app/static/js/520.3c7a82bb.chunk.js.map",
     "698.495b85e7.chunk.js.map": "/energy_react-app/static/js/698.495b85e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84e0887e.css",
-    "static/js/main.715715cc.js"
+    "static/js/main.3116d783.js"
   ]
 }
