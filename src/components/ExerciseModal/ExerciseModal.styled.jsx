@@ -10,6 +10,9 @@ export const ExercModalBackdrop = styled.div`
   z-index: 5;
   overflow: hidden;
   background-color: rgba(4, 4, 4, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ExercModal = styled.div`
@@ -26,6 +29,12 @@ export const ExercModal = styled.div`
 
 export const ModalCloseBtn = styled.button`
   background-color: transparent;
+
+  &:hover svg,
+  &:focus svg {
+    transform: scale(1.1);
+    filter: ${({ theme }) => `drop-shadow(1px 3px 5px ${theme.accentWhite})`};
+  }
 `;
 
 export const ModalCloseIcon = styled.svg`
@@ -33,6 +42,14 @@ export const ModalCloseIcon = styled.svg`
   position: absolute;
   top: 20px;
   right: 20px;
+  transition: ${({ theme }) =>
+    `transform ${theme.eased}, filter ${theme.eased}`};
+`;
+
+export const TabPositionDiv = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 export const ModalGifBlock = styled.div`
@@ -44,6 +61,7 @@ export const ModalGifBlock = styled.div`
 `;
 
 export const ExercName = styled.h3`
+  color: ${({ theme }) => theme.accentWhite};
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
@@ -58,27 +76,36 @@ export const RatingDiv = styled.div`
 `;
 
 export const RatingValue = styled.span`
+  color: ${({ theme }) => theme.accentWhite};
   font-size: 12px;
   line-height: 1.5;
 `;
 
 export const RatingList = styled.ul`
+  color: ${({ theme }) => theme.accentWhite};
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
+`;
+
+export const RatingStarIcon = styled.svg`
+  width: 15px;
+  height: 15px;
 `;
 
 export const ExercInfoList = styled.ul`
+  color: ${({ theme }) => theme.accentWhite};
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px 15px;
   margin: 8px 0 8px 0;
 `;
 
 export const ExercInfoItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: calc((100% - 40px) / 3);
+  gap: 5px;
+  width: calc((100% - 60px) / 4);
 `;
 
 export const ExercInfoName = styled.p`
@@ -88,14 +115,40 @@ export const ExercInfoName = styled.p`
 `;
 
 export const ExercInfoValue = styled.p`
-  font-weight: 500;
+  font-size: 11px;
 `;
 
 export const ExercDescr = styled.p`
+  color: ${({ theme }) => theme.accentWhite};
   opacity: 0.4;
   margin: 20px 0 40px 0;
 `;
 
-export const ModalBtnsList = styled.ul``;
-export const AddRemoveBtn = styled.button``;
-export const GiveRatingBtn = styled.button``;
+export const ModalBtnsList = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+export const AddRemoveBtn = styled.button`
+  color: ${({ theme }) => theme.accentBlack};
+  background-color: ${({ theme }) => theme.accentWhite};
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 24px;
+
+  svg {
+    fill: transparent;
+    stroke: ${({ theme }) => theme.accentBlack};
+  }
+`;
+export const GiveRatingBtn = styled.button`
+  color: ${({ theme }) => theme.accentWhite};
+  background-color: transparent;
+  border-radius: 30px;
+  border: ${({ theme }) => `1px solid ${theme.accentWhite}`};
+  padding: 12px 24px;
+`;

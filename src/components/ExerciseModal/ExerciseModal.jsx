@@ -5,11 +5,13 @@ import {
   ExercModal,
   ModalCloseBtn,
   ModalCloseIcon,
+  TabPositionDiv,
   ModalGifBlock,
   ExercName,
   RatingDiv,
   RatingValue,
   RatingList,
+  RatingStarIcon,
   ExercInfoList,
   ExercInfoItem,
   ExercInfoName,
@@ -43,65 +45,74 @@ const ExerciseModal = ({
             </ModalCloseIcon>
           </ModalCloseBtn>
 
-          <ModalGifBlock $gifUrl={gif}></ModalGifBlock>
+          <TabPositionDiv>
+            <ModalGifBlock $gifUrl={gif}></ModalGifBlock>
+            <div>
+              <ExercName>{capitalizeFirstLetter(name)}</ExercName>
+              <RatingDiv>
+                <RatingValue>{rating.toFixed(1)}</RatingValue>
 
-          <ExercName>{capitalizeFirstLetter(name)}</ExercName>
-
-          <RatingDiv>
-            <RatingValue>{rating.toFixed(1)}</RatingValue>
-            <RatingList>
-              <li>
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-star`}></use>
-                </svg>
-              </li>
-              <li>
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-star`}></use>
-                </svg>
-              </li>
-              <li>
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-star`}></use>
-                </svg>
-              </li>
-              <li>
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-star`}></use>
-                </svg>
-              </li>
-              <li>
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-star`}></use>
-                </svg>
-              </li>
-            </RatingList>
-          </RatingDiv>
-
-          <hr />
-
-          <ExercInfoList>
-            <ExercInfoItem>
-              <ExercInfoName>Target</ExercInfoName>
-              <ExercInfoValue>{capitalizeFirstLetter(target)}</ExercInfoValue>
-            </ExercInfoItem>
-            <ExercInfoItem>
-              <ExercInfoName>Body part</ExercInfoName>
-              <ExercInfoValue>{capitalizeFirstLetter(part)}</ExercInfoValue>
-            </ExercInfoItem>
-            <ExercInfoItem>
-              <ExercInfoName>Equipment</ExercInfoName>
-              <ExercInfoValue>{capitalizeFirstLetter(equip)}</ExercInfoValue>
-            </ExercInfoItem>
-            <ExercInfoItem>
-              <ExercInfoName>Popular</ExercInfoName>
-              <ExercInfoValue>{popular}</ExercInfoValue>
-            </ExercInfoItem>
-          </ExercInfoList>
-
-          <hr />
-
-          <ExercDescr>{descr}</ExercDescr>
+                <div style={{ position: 'relative' }}>
+                  <RatingList>
+                    <li>
+                      <RatingStarIcon width={18} height={18}>
+                        <use href={`${sprite}#icon-star`}></use>
+                      </RatingStarIcon>
+                    </li>
+                    <li>
+                      <RatingStarIcon width={18} height={18}>
+                        <use href={`${sprite}#icon-star`}></use>
+                      </RatingStarIcon>
+                    </li>
+                    <li>
+                      <RatingStarIcon width={18} height={18}>
+                        <use href={`${sprite}#icon-star`}></use>
+                      </RatingStarIcon>
+                    </li>
+                    <li>
+                      <RatingStarIcon width={18} height={18}>
+                        <use href={`${sprite}#icon-star`}></use>
+                      </RatingStarIcon>
+                    </li>
+                    <li>
+                      <RatingStarIcon width={18} height={18}>
+                        <use href={`${sprite}#icon-star`}></use>
+                      </RatingStarIcon>
+                    </li>
+                  </RatingList>
+                </div>
+              </RatingDiv>
+              <hr />
+              <ExercInfoList>
+                <ExercInfoItem>
+                  <ExercInfoName>Target</ExercInfoName>
+                  <ExercInfoValue>
+                    {capitalizeFirstLetter(target)}
+                  </ExercInfoValue>
+                </ExercInfoItem>
+                <ExercInfoItem>
+                  <ExercInfoName>Body part</ExercInfoName>
+                  <ExercInfoValue>{capitalizeFirstLetter(part)}</ExercInfoValue>
+                </ExercInfoItem>
+                <ExercInfoItem>
+                  <ExercInfoName>Equipment</ExercInfoName>
+                  <ExercInfoValue>
+                    {capitalizeFirstLetter(equip)}
+                  </ExercInfoValue>
+                </ExercInfoItem>
+                <ExercInfoItem>
+                  <ExercInfoName>Popular</ExercInfoName>
+                  <ExercInfoValue>{popular}</ExercInfoValue>
+                </ExercInfoItem>
+                <ExercInfoItem>
+                  <ExercInfoName>Burned Calories</ExercInfoName>
+                  <ExercInfoValue>{`${calories} / ${time}`}</ExercInfoValue>
+                </ExercInfoItem>
+              </ExercInfoList>
+              <hr />
+              <ExercDescr>{descr}</ExercDescr>
+            </div>
+          </TabPositionDiv>
 
           <ModalBtnsList>
             <li>

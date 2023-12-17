@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from 'contexts/ThemeContext';
 import { lightTheme, darkTheme } from 'theme';
-import { GlobalStyles } from 'styles/globalStyled';
+import { GlobalStyles } from 'styles/GlobalStyles';
 import SharedHeader from 'components/SharedHeader/SharedHeader';
 
 const MainPage = lazy(() => import('pages/MainPage'));
