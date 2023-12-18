@@ -9,7 +9,7 @@ export const FeedModalBackdrop = styled.div`
   bottom: 0;
   z-index: 6;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.modalBackdrop};
+  background-color: ${({ theme }) => theme.feedModalBackdrop};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +23,7 @@ export const FeedModal = styled.div`
   border-radius: 20px;
   padding: 40px 20px;
   margin: 0 auto;
+  z-index: 7;
 
   @media screen and (min-width: 768px) {
     width: 430px;
@@ -90,9 +91,9 @@ export const FeedModalRatList = styled.ul`
 export const FeedModalRatStar = styled.svg`
   width: 20px;
   height: 20px;
-  fill: ${({ theme }) => theme.accentWhite};
-  opacity: 0.2;
+  fill: ${({ $color }) => $color};
   cursor: pointer;
+  transition: ${({ theme }) => `fill ${theme.eased}`};
 `;
 
 export const FeedModalForm = styled.form`

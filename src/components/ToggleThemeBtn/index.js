@@ -1,1 +1,1 @@
-export { default } from './/ToggleThemeBtn';
+export { default } from './ToggleThemeBtn';

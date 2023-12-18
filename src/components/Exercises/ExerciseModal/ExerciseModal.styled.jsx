@@ -8,8 +8,7 @@ export const ExercModalBackdrop = styled.div`
   left: 0;
   bottom: 0;
   z-index: 5;
-  overflow: hidden;
-  background-color: ${({ theme }) => theme.modalBackdrop};
+  background-color: ${({ theme }) => theme.exercModalBackdrop};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,6 +21,7 @@ export const ExercModal = styled.div`
   border-radius: 20px;
   padding: 40px 20px;
   margin: 0 auto;
+  overflow-y: auto;
 
   & hr {
     border-color: rgba(244, 244, 244, 0.2);
@@ -89,8 +89,8 @@ export const ExercName = styled.h3`
 `;
 
 export const RatingDiv = styled.div`
+  position: relative;
   display: flex;
-  align-items: center;
   gap: 5px;
   margin-bottom: 20px;
 `;
@@ -111,8 +111,7 @@ export const RatingList = styled.ul`
 export const RatingStarIcon = styled.svg`
   width: 15px;
   height: 15px;
-  fill: ${({ theme }) => theme.accentWhite};
-  opacity: 0.2;
+  fill: ${({ $fill }) => $fill};
 `;
 
 export const ExercInfoList = styled.ul`
@@ -130,6 +129,7 @@ export const ExercInfoList = styled.ul`
 
 export const ExercInfoItem = styled.li`
   display: flex;
+
   flex-direction: column;
   gap: 5px;
   width: calc((100% - 60px) / 4);

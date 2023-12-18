@@ -1,5 +1,10 @@
+import { useContext, useEffect, useState } from 'react';
+import { ModalContext } from 'contexts/ExercModalOpen';
+import { ThemeContext } from 'contexts/ThemeContext';
+import { darkTheme, lightTheme } from 'theme';
 import sprite from 'assets/img/sprite.svg';
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
+import { MainContainer } from 'components/App/App.styled';
 import {
   ExercModalBackdrop,
   ExercModal,
@@ -21,66 +26,97 @@ import {
   AddRemoveBtn,
   GiveRatingBtn,
 } from './ExerciseModal.styled';
-import { MainContainer } from 'components/App/App.styled';
 
 const ExerciseModal = ({
-  name,
-  descr,
-  gif,
-  rating,
-  target,
-  part,
-  equip,
-  popular,
-  calories,
-  time,
+  info: {
+    name,
+    description,
+    gifUrl,
+    rating,
+    target,
+    bodyPart,
+    equipment,
+    popularity,
+    burnedCalories,
+    time,
+  },
+  openFeedModal,
 }) => {
+  const { closeExercModal } = useContext(ModalContext);
+  const { theme } = useContext(ThemeContext);
+
+  const [addedToFav, setAddedToFav] = useState(false);
+
+  useEffect(() => {
+    const onEscClose = e => {
+      if (e.code === 'Escape') {
+        closeExercModal();
+        document.body.style.overflow = '';
+      }
+    };
+
+    document.addEventListener('keydown', onEscClose);
+
+    return () => {
+      document.removeEventListener('keydown', onEscClose);
+    };
+  }, [closeExercModal]);
+
+  const onBackdropClose = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
+      closeExercModal();
+      document.body.style.overflow = '';
+    }
+  };
+
+  const toggleAddingToFav = () => {
+    setAddedToFav(prev => !prev);
+  };
+
+  const starsArr = Array(5).fill(0);
+
+  const currentTheme = theme === 'light' ? lightTheme : darkTheme;
+
   return (
-    <ExercModalBackdrop>
-      <MainContainer>
+    <ExercModalBackdrop onClick={onBackdropClose}>
+      <MainContainer onClick={onBackdropClose}>
         <ExercModal>
-          <ModalCloseBtn type="button">
+          <ModalCloseBtn
+            type="button"
+            onClick={() => {
+              closeExercModal();
+              document.body.style.overflow = '';
+            }}
+          >
             <ModalCloseIcon width={24} height={24}>
               <use href={`${sprite}#icon-close`}></use>
             </ModalCloseIcon>
           </ModalCloseBtn>
 
           <TabPositionDiv>
-            <ModalGifBlock $gifUrl={gif}></ModalGifBlock>
+            <ModalGifBlock $gifUrl={gifUrl}></ModalGifBlock>
             <div>
               <ExercName>{capitalizeFirstLetter(name)}</ExercName>
               <RatingDiv>
                 <RatingValue>{rating.toFixed(1)}</RatingValue>
 
-                <div style={{ position: 'relative' }}>
-                  <RatingList>
-                    <li>
-                      <RatingStarIcon width={18} height={18}>
+                <RatingList>
+                  {starsArr.map((_, index) => (
+                    <li key={index}>
+                      <RatingStarIcon
+                        width={18}
+                        height={18}
+                        $fill={
+                          Math.round(rating) >= index + 1
+                            ? currentTheme.orange
+                            : currentTheme.greyStarFill
+                        }
+                      >
                         <use href={`${sprite}#icon-star`}></use>
                       </RatingStarIcon>
                     </li>
-                    <li>
-                      <RatingStarIcon width={18} height={18}>
-                        <use href={`${sprite}#icon-star`}></use>
-                      </RatingStarIcon>
-                    </li>
-                    <li>
-                      <RatingStarIcon width={18} height={18}>
-                        <use href={`${sprite}#icon-star`}></use>
-                      </RatingStarIcon>
-                    </li>
-                    <li>
-                      <RatingStarIcon width={18} height={18}>
-                        <use href={`${sprite}#icon-star`}></use>
-                      </RatingStarIcon>
-                    </li>
-                    <li>
-                      <RatingStarIcon width={18} height={18}>
-                        <use href={`${sprite}#icon-star`}></use>
-                      </RatingStarIcon>
-                    </li>
-                  </RatingList>
-                </div>
+                  ))}
+                </RatingList>
               </RatingDiv>
               <hr />
               <ExercInfoList>
@@ -92,42 +128,60 @@ const ExerciseModal = ({
                 </ExercInfoItem>
                 <ExercInfoItem>
                   <ExercInfoName>Body part</ExercInfoName>
-                  <ExercInfoValue>{capitalizeFirstLetter(part)}</ExercInfoValue>
+                  <ExercInfoValue>
+                    {capitalizeFirstLetter(bodyPart)}
+                  </ExercInfoValue>
                 </ExercInfoItem>
                 <ExercInfoItem>
                   <ExercInfoName>Equipment</ExercInfoName>
                   <ExercInfoValue>
-                    {capitalizeFirstLetter(equip)}
+                    {capitalizeFirstLetter(equipment)}
                   </ExercInfoValue>
                 </ExercInfoItem>
                 <ExercInfoItem>
                   <ExercInfoName>Popular</ExercInfoName>
-                  <ExercInfoValue>{popular}</ExercInfoValue>
+                  <ExercInfoValue>{popularity}</ExercInfoValue>
                 </ExercInfoItem>
                 <ExercInfoItem>
                   <ExercInfoName>Burned Calories</ExercInfoName>
-                  <ExercInfoValue>{`${calories}/${time}min`}</ExercInfoValue>
+                  <ExercInfoValue>{`${burnedCalories}/${time}min`}</ExercInfoValue>
                 </ExercInfoItem>
               </ExercInfoList>
               <hr />
-              <ExercDescr>{descr}</ExercDescr>
+              <ExercDescr>{description}</ExercDescr>
             </div>
           </TabPositionDiv>
 
           <ModalBtnsList>
             <li>
-              <AddRemoveBtn type="button">
-                Add to favorites
-                <svg width={18} height={18}>
-                  <use href={`${sprite}#icon-heart`}></use>
-                </svg>
-                {/* <svg width={18} height={18}>
-                <use href={`${sprite}#icon-trash`}></use>
-              </svg> */}
+              <AddRemoveBtn type="button" onClick={toggleAddingToFav}>
+                {addedToFav ? (
+                  <>
+                    Remove from favorites
+                    <svg width={18} height={18}>
+                      <use href={`${sprite}#icon-trash`}></use>
+                    </svg>
+                  </>
+                ) : (
+                  <>
+                    Add to favorites
+                    <svg width={18} height={18}>
+                      <use href={`${sprite}#icon-heart`}></use>
+                    </svg>
+                  </>
+                )}
               </AddRemoveBtn>
             </li>
             <li>
-              <GiveRatingBtn type="button">Give rating</GiveRatingBtn>
+              <GiveRatingBtn
+                type="button"
+                onClick={() => {
+                  openFeedModal();
+                  closeExercModal();
+                }}
+              >
+                Give rating
+              </GiveRatingBtn>
             </li>
           </ModalBtnsList>
         </ExercModal>

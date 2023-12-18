@@ -5,7 +5,9 @@ const commonVars = {
   accentBlack: '#242424',
   orange: '#EEA10C',
   green: '#098115',
-  modalBackdrop: 'rgba(4, 4, 4, 0.8)',
+  feedModalBackdrop: 'rgba(4, 4, 4, 0.5)',
+  exercModalBackdrop: 'rgba(4, 4, 4, 0.7)',
+  greyStarFill: 'rgba(244, 244, 244, 0.20);',
 };
 
 export const darkTheme = {

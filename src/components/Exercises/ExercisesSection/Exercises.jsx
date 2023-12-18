@@ -28,6 +28,8 @@ const Exercises = () => {
   const [breadCrumb, setBreadCrumb] = useState('');
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeId, setActiveId] = useState(null);
 
   useEffect(() => {
     const getCardsFromFilter = async () => {
@@ -53,16 +55,28 @@ const Exercises = () => {
     getCardsFromFilter();
   }, [filter, page]);
 
+  const openFeedModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeFeedModal = e => {
+    setIsModalOpen(false);
+  };
+
   const searchExercisesCard = q => {
     setQuery(q);
+  };
+
+  const getExerciseActiveId = id => {
+    setActiveId(id);
   };
 
   return (
     <>
       {isLoading && <Loader />}
-      {/* <FeedbackModal /> */}
-      <MainContainer>
-        <ExercisesSection>
+
+      <ExercisesSection>
+        <MainContainer>
           <ExersisesPositionWrap>
             <ExercisesTitle>
               Exercises
@@ -106,13 +120,22 @@ const Exercises = () => {
                 name={breadCrumb}
                 query={query}
                 setPage={setPage}
+                openFeedModal={openFeedModal}
+                returnExercId={getExerciseActiveId}
+              />
+            )}
+
+            {isModalOpen && (
+              <FeedbackModal
+                closeFeedModal={closeFeedModal}
+                exercId={activeId}
               />
             )}
 
             <Info />
           </FiltersCardsAndInfoWrap>
-        </ExercisesSection>
-      </MainContainer>
+        </MainContainer>
+      </ExercisesSection>
     </>
   );
 };

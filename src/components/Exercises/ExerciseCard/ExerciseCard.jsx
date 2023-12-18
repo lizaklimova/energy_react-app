@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { ModalContext } from 'contexts/ExercModalOpen';
 import sprite from 'assets/img/sprite.svg';
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import {
@@ -27,10 +28,12 @@ const ExerciseCard = ({
   calories,
   part,
   target,
-  openModal,
+  setExercId,
+  returnExercId,
+  exercId,
 }) => {
-  const [exerciseId, setExerciseId] = useState(null);
-  console.log(exerciseId);
+  const { openExercModal } = useContext(ModalContext);
+
   return (
     <Card>
       <WorkoutBtnDiv>
@@ -46,7 +49,10 @@ const ExerciseCard = ({
         <StartBtn
           type="button"
           onClick={() => {
-            setExerciseId(id);
+            setExercId(id);
+            openExercModal();
+            returnExercId(exercId);
+            document.body.style.overflow = 'hidden';
           }}
         >
           <span>Start</span>
