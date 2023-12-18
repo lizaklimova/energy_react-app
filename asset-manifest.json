@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/energy_react-app/static/css/main.84e0887e.css",
-    "main.js": "/energy_react-app/static/js/main.2d4ce1ca.js",
-    "static/js/393.375b4408.chunk.js": "/energy_react-app/static/js/393.375b4408.chunk.js",
+    "main.css": "/energy_react-app/static/css/main.ac3fd519.css",
+    "main.js": "/energy_react-app/static/js/main.41a7d424.js",
+    "static/js/763.e78cc4a2.chunk.js": "/energy_react-app/static/js/763.e78cc4a2.chunk.js",
     "static/js/224.52be8bc4.chunk.js": "/energy_react-app/static/js/224.52be8bc4.chunk.js",
     "static/js/520.3c7a82bb.chunk.js": "/energy_react-app/static/js/520.3c7a82bb.chunk.js",
     "static/js/698.495b85e7.chunk.js": "/energy_react-app/static/js/698.495b85e7.chunk.js",
@@ -16,8 +16,14 @@
     "static/media/hero-women-mob.webp": "/energy_react-app/static/media/hero-women-mob.bf7fa17614c05bb98674.webp",
     "static/media/info-girls-mob.jpg": "/energy_react-app/static/media/info-girls-mob.2c405c603cead09ab61b.jpg",
     "static/media/info-girls-dekstop.webp": "/energy_react-app/static/media/info-girls-dekstop.e1cdcb1f4029a07d19ab.webp",
+    "static/media/NeueMontreal-Italic.woff": "/energy_react-app/static/media/NeueMontreal-Italic.2e398bb3cba69a9e672b.woff",
+    "static/media/NeueMontreal-Medium.woff": "/energy_react-app/static/media/NeueMontreal-Medium.7cb2840cea8f36df2a82.woff",
+    "static/media/NeueMontreal-Regular.woff": "/energy_react-app/static/media/NeueMontreal-Regular.0c914f20bd2036dd69ac.woff",
     "static/media/hero-legs-desk2x.webp": "/energy_react-app/static/media/hero-legs-desk2x.703a6c898bc3f5c5c047.webp",
     "static/media/info-girls-tab.webp": "/energy_react-app/static/media/info-girls-tab.e09ba1efee520c925a2c.webp",
+    "static/media/NeueMontreal-Italic.woff2": "/energy_react-app/static/media/NeueMontreal-Italic.da5568b322bd6d4956ee.woff2",
+    "static/media/NeueMontreal-Medium.woff2": "/energy_react-app/static/media/NeueMontreal-Medium.f7260c49d75c006801c1.woff2",
+    "static/media/NeueMontreal-Regular.woff2": "/energy_react-app/static/media/NeueMontreal-Regular.88cfe9a896d68a9ad993.woff2",
     "static/media/hero-women-mob.jpg": "/energy_react-app/static/media/hero-women-mob.2fb7f825bd0f6c4c2001.jpg",
     "static/media/info-girls-mob2x.webp": "/energy_react-app/static/media/info-girls-mob2x.90439087ff3154fdb51b.webp",
     "static/media/info-girls-mob2x.jpg": "/energy_react-app/static/media/info-girls-mob2x.897c36abc4c90d0ab4bc.jpg",
@@ -25,15 +31,15 @@
     "static/media/hero-legs-desk.webp": "/energy_react-app/static/media/hero-legs-desk.ed1d71485c8d9bc7b6ac.webp",
     "static/media/info-girls-mob.webp": "/energy_react-app/static/media/info-girls-mob.40bf99f053aef1e989e4.webp",
     "index.html": "/energy_react-app/index.html",
-    "main.84e0887e.css.map": "/energy_react-app/static/css/main.84e0887e.css.map",
-    "main.2d4ce1ca.js.map": "/energy_react-app/static/js/main.2d4ce1ca.js.map",
-    "393.375b4408.chunk.js.map": "/energy_react-app/static/js/393.375b4408.chunk.js.map",
+    "main.ac3fd519.css.map": "/energy_react-app/static/css/main.ac3fd519.css.map",
+    "main.41a7d424.js.map": "/energy_react-app/static/js/main.41a7d424.js.map",
+    "763.e78cc4a2.chunk.js.map": "/energy_react-app/static/js/763.e78cc4a2.chunk.js.map",
     "224.52be8bc4.chunk.js.map": "/energy_react-app/static/js/224.52be8bc4.chunk.js.map",
     "520.3c7a82bb.chunk.js.map": "/energy_react-app/static/js/520.3c7a82bb.chunk.js.map",
     "698.495b85e7.chunk.js.map": "/energy_react-app/static/js/698.495b85e7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84e0887e.css",
-    "static/js/main.2d4ce1ca.js"
+    "static/css/main.ac3fd519.css",
+    "static/js/main.41a7d424.js"
   ]
 }
