@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import Switch from '@mui/material/Switch';
 
-export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+const ToggleThemeBtn = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
   padding: 7,
@@ -48,3 +48,5 @@ export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
+export default ToggleThemeBtn;

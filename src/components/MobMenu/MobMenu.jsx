@@ -1,4 +1,4 @@
-import sprite from 'img/sprite.svg';
+import sprite from 'assets/img/sprite.svg';
 import {
   MenuBackdrop,
   Menu,
@@ -7,7 +7,7 @@ import {
   MenuNavList,
   MenuNavLink,
 } from './MobMenu.styled';
-import Socials from 'components/SharedHeader/Socials';
+import Socials from 'components/SharedHeader/Socials/Socials';
 
 const MobMenu = ({ isOpened, setOpening }) => {
   const handleBackdropClose = ({ target, currentTarget }) => {

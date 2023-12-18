@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import { ThemeContext } from 'contexts/ThemeContext';
-import { MaterialUISwitch } from 'components/ToggleThemeBtn/ToggleThemeBtn';
 import { FormControlLabel } from '@mui/material';
+import { ThemeContext } from 'contexts/ThemeContext';
+import ToggleThemeBtn from 'components/ToggleThemeBtn';
 import { MainContainer } from 'components/App/App.styled';
-import Hero from 'components/Hero/Hero';
-import Exercises from 'components/Exercises/Exercises';
-import Footer from 'components/Footer/Footer';
+import Hero from 'components/Hero/HeroSection/Hero';
+import Exercises from 'components/Exercises/ExercisesSection';
+import Footer from 'components/Footer/FooterSection';
 
 const MainPage = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -20,7 +20,7 @@ const MainPage = () => {
           }}
           onClick={toggleTheme}
           checked={theme === 'dark'}
-          control={<MaterialUISwitch />}
+          control={<ToggleThemeBtn />}
         />
       </MainContainer>
       <Hero />

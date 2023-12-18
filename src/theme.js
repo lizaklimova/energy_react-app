@@ -5,6 +5,7 @@ const commonVars = {
   accentBlack: '#242424',
   orange: '#EEA10C',
   green: '#098115',
+  modalBackdrop: 'rgba(4, 4, 4, 0.8)',
 };
 
 export const darkTheme = {

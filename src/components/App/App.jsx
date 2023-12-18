@@ -5,8 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { ThemeContext } from 'contexts/ThemeContext';
 import { lightTheme, darkTheme } from 'theme';
-import { GlobalStyles } from 'styles/GlobalStyles';
-import SharedHeader from 'components/SharedHeader/SharedHeader';
+import { GlobalStyles } from 'assets/styles/GlobalStyles';
+import SharedHeader from 'components/SharedHeader/SharedHeaderSection/SharedHeader';
 
 const MainPage = lazy(() => import('pages/MainPage'));
 const FavouritesPage = lazy(() => import('pages/FavouritesPage'));
@@ -34,6 +34,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />
+
       <Routes>
         <Route path="/" element={<SharedHeader />}>
           <Route index element={<MainPage />} />
