@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { ModalContext } from 'contexts/ExercModalOpen';
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import sprite from 'assets/img/sprite.svg';
 
