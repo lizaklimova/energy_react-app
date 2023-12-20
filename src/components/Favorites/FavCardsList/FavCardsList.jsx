@@ -1,11 +1,7 @@
 import { useContext, useState } from 'react';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import FavCard from '../FavCard';
-import {
-  ListAndPaginationWrap,
-  FavCardsUl,
-  FavCardLi,
-} from './FavCardsList.styled';
+import { FavCardsUl, FavCardLi } from './FavCardsList.styled';
 import ExerciseModal from 'components/Exercises/ExerciseModal';
 import FeedbackModal from 'components/FeedbackModal/FeedbackModal';
 import PaginationList from 'components/PaginationList/PaginationList';
