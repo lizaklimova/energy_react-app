@@ -4,6 +4,7 @@ const ModalContext = createContext();
 
 const ModalExercProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFeedModalOpen, setIsFeedModalOpen] = useState(false);
 
   const openExercModal = () => {
     setIsModalOpen(true);
@@ -13,9 +14,24 @@ const ModalExercProvider = ({ children }) => {
     setIsModalOpen(false);
   };
 
+  const openFeedModal = () => {
+    setIsFeedModalOpen(true);
+  };
+
+  const closeFeedModal = () => {
+    setIsFeedModalOpen(false);
+  };
+
   return (
     <ModalContext.Provider
-      value={{ isModalOpen, openExercModal, closeExercModal }}
+      value={{
+        isModalOpen,
+        openExercModal,
+        closeExercModal,
+        isFeedModalOpen,
+        openFeedModal,
+        closeFeedModal,
+      }}
     >
       {children}
     </ModalContext.Provider>

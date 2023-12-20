@@ -4,7 +4,6 @@ export const SocialsList = styled.ul`
   @media screen and (max-width: 767px) {
     display: ${({ $variant }) => ($variant === 'footer' ? 'flex' : 'none')};
   }
-  /* color: #525050; */
   display: flex;
   justify-content: center;
   gap: 12px;

@@ -9,6 +9,7 @@ export const ExercModalBackdrop = styled.div`
   bottom: 0;
   z-index: 5;
   background-color: ${({ theme }) => theme.exercModalBackdrop};
+  backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,7 +170,7 @@ export const ExercDescr = styled.p`
 export const ModalBtnsList = styled.ul`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 `;
 
 export const AddRemoveBtn = styled.button`

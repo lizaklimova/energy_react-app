@@ -9,10 +9,14 @@ export const QuoteBlock = styled.div`
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 0;
-    width: calc((100% - 16px) / 2);
+    width: ${({ $variant }) =>
+      $variant === 'fav' ? '100%' : 'calc((100% - 16px) / 2)'};
     padding: 40px;
+    justify-content: ${({ $variant }) =>
+      $variant === 'fav' ? 'flex-start' : 'center'};
   }
 
   @media screen and (min-width: 1440px) {

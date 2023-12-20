@@ -4,12 +4,12 @@ import { useContext } from 'react';
 import smoothScroll from 'scrolls/smoothScroll';
 import { ThemeContext } from 'styled-components';
 
-const PaginationList = ({ pageQty, pg, onChange }) => {
+const PaginationList = ({ pageQty, pg, onChange, target }) => {
   const theme = useContext(ThemeContext);
 
   const handlePaginationChange = (_, num) => {
     onChange(num);
-    smoothScroll('filters');
+    smoothScroll(target);
   };
 
   return (

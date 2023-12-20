@@ -13,7 +13,7 @@ import {
   CommasIcon,
 } from '../Quote/Quote.styled';
 
-const Quote = () => {
+const Quote = ({ variant }) => {
   const [quote, setQuote] = useState(
     () => JSON.parse(localStorage.getItem('quote')) ?? {}
   );
@@ -41,7 +41,7 @@ const Quote = () => {
   }, [quote]);
 
   return (
-    <QuoteBlock>
+    <QuoteBlock $variant={variant}>
       {isLoading ? (
         <Spinner />
       ) : (
