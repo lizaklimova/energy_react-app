@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import { ThemeContext } from 'contexts/ThemeContext';
 import { darkTheme, lightTheme } from 'theme';
@@ -29,6 +29,7 @@ import {
 
 const ExerciseModal = ({
   info: {
+    _id,
     name,
     description,
     gifUrl,
@@ -41,11 +42,16 @@ const ExerciseModal = ({
     time,
   },
   openFeedModal,
+  cards,
 }) => {
   const { closeExercModal } = useContext(ModalContext);
   const { theme } = useContext(ThemeContext);
 
-  const [addedToFav, setAddedToFav] = useState(false);
+  const [favCards, setFavCards] = useState(
+    () => JSON.parse(localStorage.getItem('favorites')) ?? []
+  );
+
+  const isAddedToFavoriteRef = useRef(false);
 
   useEffect(() => {
     const onEscClose = e => {
@@ -62,15 +68,35 @@ const ExerciseModal = ({
     };
   }, [closeExercModal]);
 
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites')) ?? [];
+    setFavCards(storedFavorites);
+
+    isAddedToFavoriteRef.current = storedFavorites.find(
+      card => card._id === _id
+    );
+  }, [_id]);
+
+  const addToFavorites = () => {
+    isAddedToFavoriteRef.current = true;
+    const addedCard = cards.find(exerc => exerc._id === _id);
+    const updatedCards = [...favCards, addedCard];
+    setFavCards(updatedCards);
+    localStorage.setItem('favorites', JSON.stringify(updatedCards));
+  };
+
+  const deleteFromFavorites = () => {
+    isAddedToFavoriteRef.current = false;
+    const updatedFavCards = favCards.filter(card => card._id !== _id);
+    setFavCards(updatedFavCards);
+    localStorage.setItem('favorites', JSON.stringify(updatedFavCards));
+  };
+
   const onBackdropClose = ({ target, currentTarget }) => {
     if (target === currentTarget) {
       closeExercModal();
       document.body.style.overflow = '';
     }
-  };
-
-  const toggleAddingToFav = () => {
-    setAddedToFav(prev => !prev);
   };
 
   const starsArr = Array(5).fill(0);
@@ -154,23 +180,21 @@ const ExerciseModal = ({
 
           <ModalBtnsList>
             <li>
-              <AddRemoveBtn type="button" onClick={toggleAddingToFav}>
-                {addedToFav ? (
-                  <>
-                    Remove from favorites
-                    <svg width={18} height={18}>
-                      <use href={`${sprite}#icon-trash`}></use>
-                    </svg>
-                  </>
-                ) : (
-                  <>
-                    Add to favorites
-                    <svg width={18} height={18}>
-                      <use href={`${sprite}#icon-heart`}></use>
-                    </svg>
-                  </>
-                )}
-              </AddRemoveBtn>
+              {isAddedToFavoriteRef.current ? (
+                <AddRemoveBtn type="button" onClick={deleteFromFavorites}>
+                  Remove from favorites
+                  <svg width={18} height={18}>
+                    <use href={`${sprite}#icon-trash`}></use>
+                  </svg>
+                </AddRemoveBtn>
+              ) : (
+                <AddRemoveBtn type="button" onClick={addToFavorites}>
+                  Add to favorites
+                  <svg width={18} height={18}>
+                    <use href={`${sprite}#icon-heart`}></use>
+                  </svg>
+                </AddRemoveBtn>
+              )}
             </li>
             <li>
               <GiveRatingBtn

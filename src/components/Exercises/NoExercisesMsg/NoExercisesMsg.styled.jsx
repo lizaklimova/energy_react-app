@@ -10,7 +10,7 @@ export const MsgContainer = styled.div`
 
   @media screen and (min-width: 1440px) {
     width: 900px;
-    padding-left: 40%;
+    padding-left: 30%;
   }
 `;
 

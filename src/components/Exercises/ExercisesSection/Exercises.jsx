@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useContext } from 'react';
+import throttle from 'lodash.throttle';
 import { fetchFilter } from 'services/exercises-api';
 import { Notify } from 'notiflix';
 import { MainContainer } from 'components/App/App.styled';
@@ -19,8 +20,12 @@ import {
   FiltersCardsAndInfoWrap,
 } from './Exercises.styled';
 import FeedbackModal from 'components/FeedbackModal/FeedbackModal';
+import { ModalContext } from 'contexts/ExercModalOpen';
 
 const Exercises = () => {
+  const { isFeedModalOpen, openFeedModal, closeFeedModal } =
+    useContext(ModalContext);
+
   const [page, setPage] = useState(1);
   const [totalPgs, setTotalPgs] = useState(1);
   const [filter, setFilter] = useState('Body%20parts');
@@ -28,7 +33,6 @@ const Exercises = () => {
   const [breadCrumb, setBreadCrumb] = useState('');
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeId, setActiveId] = useState(null);
 
   useEffect(() => {
@@ -55,17 +59,13 @@ const Exercises = () => {
     getCardsFromFilter();
   }, [filter, page]);
 
-  const openFeedModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeFeedModal = e => {
-    setIsModalOpen(false);
-  };
-
-  const searchExercisesCard = q => {
-    setQuery(q);
-  };
+  const searchExercisesCard = useMemo(
+    () =>
+      throttle(q => {
+        setQuery(q);
+      }, 1000),
+    []
+  );
 
   const getExerciseActiveId = id => {
     setActiveId(id);
@@ -96,6 +96,7 @@ const Exercises = () => {
                 resetPage={setPage}
                 page={page}
                 resetBreadCrumb={setBreadCrumb}
+                setQuery={setQuery}
               />
             </FiltersAndSearchWrap>
           </ExersisesPositionWrap>
@@ -125,7 +126,7 @@ const Exercises = () => {
               />
             )}
 
-            {isModalOpen && (
+            {isFeedModalOpen && (
               <FeedbackModal
                 closeFeedModal={closeFeedModal}
                 exercId={activeId}

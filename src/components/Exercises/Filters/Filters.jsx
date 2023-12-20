@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { FiltersList, FilterItemBtn } from './Filters.styled';
 import smoothScroll from 'scrolls/smoothScroll';
 
-const Filters = ({ setFilter, resetPage, page, resetBreadCrumb }) => {
+const Filters = ({ setFilter, resetPage, page, resetBreadCrumb, setQuery }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  // eslint-disable-next-line
-  const [_, setSearchParams] = useSearchParams();
 
   const handleFilterClick = index => {
+    setQuery('');
     resetPage(1);
     setActiveIndex(index);
     smoothScroll('filters');
-    setSearchParams({ page });
     resetBreadCrumb('');
   };
 

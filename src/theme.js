@@ -26,6 +26,8 @@ export const darkTheme = {
   footerOpacity: 'rgba(244, 244, 244, 0.1)',
   cardBackground: '#525050',
   hoveredOpacity: 'rgba(244, 244, 244, 0.30)',
+  favInfoBg: '#242424',
+  favInfoBorder: '1px solid #fff',
 };
 
 export const lightTheme = {
@@ -44,4 +46,6 @@ export const lightTheme = {
   footerOpacity: 'rgba(36, 36, 36, 0.10)',
   cardBackground: '#fff',
   hoveredOpacity: 'rgba(36, 36, 36, 0.30)',
+  favInfoBg: '#fff',
+  favInfoBorder: 'none',
 };

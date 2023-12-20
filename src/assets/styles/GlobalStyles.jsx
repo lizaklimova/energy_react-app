@@ -10,7 +10,8 @@ export const GlobalStyles = createGlobalStyle`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
 
-
+transition: ${({ theme }) =>
+  `background-color ${theme.eased}, color ${theme.eased}`};
 }
 
 h1,
@@ -65,13 +66,13 @@ svg {
 
 
 ::-webkit-scrollbar-thumb {
-  background-color: ${({ theme }) => theme.accentBlack}; 
+  background-color: ${({ theme }) => theme.text}; 
   border-radius: 6px; 
 }
 
 * {
   scrollbar-width: thin; 
-  scrollbar-color:${({ theme }) => `#bbbbbb ${theme.accentBlack}`};  
+  scrollbar-color:${({ theme }) => `#bbbbbb ${theme.text}`};  
 }
 
 `;

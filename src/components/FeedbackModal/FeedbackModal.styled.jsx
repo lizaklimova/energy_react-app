@@ -10,6 +10,7 @@ export const FeedModalBackdrop = styled.div`
   z-index: 6;
   overflow: hidden;
   background-color: ${({ theme }) => theme.feedModalBackdrop};
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;

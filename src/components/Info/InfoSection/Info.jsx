@@ -7,7 +7,7 @@ const Info = () => {
   return (
     <InfoSection>
       <InfoPositionWrap>
-        <Quote />
+        <Quote variant={'info'} />
         <InfoImg />
         <Recommendation />
       </InfoPositionWrap>

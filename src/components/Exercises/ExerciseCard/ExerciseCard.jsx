@@ -38,7 +38,7 @@ const ExerciseCard = ({
     <Card>
       <WorkoutBtnDiv>
         <WorkoutDiv>
-          <Workout>WORKOUT</Workout>
+          <Workout>workout</Workout>
           <RatingWrap>
             <RatingNumber>{rating.toFixed(1)}</RatingNumber>
             <RatingIcon width={18} height={18}>

@@ -29,3 +29,17 @@
   src: url('./assets/fonts/NeueMontreal-Medium.woff2') format('woff2'),
     url('./assets/fonts/NeueMontreal-Medium.woff') format('woff');
 }
+
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  background-color: rgba(4, 4, 4, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

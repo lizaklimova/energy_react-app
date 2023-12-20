@@ -3,6 +3,7 @@ import { SearchForm, SearchInput, SearchIcon } from './Search.styled';
 const Search = ({ onChange }) => {
   const handleSearch = e => {
     const query = e.target.value.toLowerCase().trim();
+    if (!query) return;
     onChange(query);
   };
 

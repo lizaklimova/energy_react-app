@@ -80,11 +80,20 @@ const ExercisesCardsList = ({
           <NoExercisesMsg name={`" ${query} "`} variant="query" />
         )}
         {filteredCards.length > 0 && (
-          <PaginationList pageQty={totalPgs} pg={pg} onChange={setPg} />
+          <PaginationList
+            pageQty={totalPgs}
+            pg={pg}
+            onChange={setPg}
+            target="filters"
+          />
         )}
       </CardsList>
       {isModalOpen && (
-        <ExerciseModal info={visibleModal} openFeedModal={openFeedModal} />
+        <ExerciseModal
+          info={visibleModal}
+          openFeedModal={openFeedModal}
+          cards={cards}
+        />
       )}
     </>
   );

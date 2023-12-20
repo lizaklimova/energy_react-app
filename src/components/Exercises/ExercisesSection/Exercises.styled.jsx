@@ -58,7 +58,7 @@ export const FiltersCardsAndInfoWrap = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 32px;
   }
 `;
