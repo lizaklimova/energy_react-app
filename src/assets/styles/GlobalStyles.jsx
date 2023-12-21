@@ -42,6 +42,7 @@ button {
   cursor: pointer;
 }
 
+
 input {
   font-family: inherit;
 }
@@ -51,6 +52,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 svg {
   fill: currentColor;
 }

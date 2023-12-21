@@ -36,6 +36,7 @@ const FavCard = ({
     const updatedFavCards = favCards.filter(card => card._id !== id);
     setSavedCards(updatedFavCards);
     localStorage.setItem('favorites', JSON.stringify(updatedFavCards));
+    window.location.reload();
   };
 
   return (
@@ -47,7 +48,6 @@ const FavCard = ({
             onClick={() => {
               handleDeleteFromFavs();
               setCurExercId();
-              window.location.reload();
             }}
           >
             <TrashIcon width={18} height={18}>

@@ -9,7 +9,6 @@ export const ListAndPaginationWrap = styled.div`
 
 export const FavCardsUl = styled.ul`
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -20,6 +19,7 @@ export const FavCardsUl = styled.ul`
   }
 
   @media screen and (min-width: 1440px) {
+    width: 80%;
     max-width: 900px;
     max-height: 550px;
     margin-top: 0;
@@ -28,9 +28,9 @@ export const FavCardsUl = styled.ul`
 `;
 
 export const FavCardLi = styled.li`
-  width: 100%;
+  min-width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: calc((100% - 16px) / 2);
+    min-width: calc((100% - 16px) / 2);
   }
 `;

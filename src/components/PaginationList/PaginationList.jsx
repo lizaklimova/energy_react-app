@@ -20,6 +20,7 @@ const PaginationList = ({ pageQty, pg, onChange, target }) => {
         onChange={handlePaginationChange}
         sx={{
           '& .MuiPaginationItem-root': {
+            margin: 0,
             color: theme.text,
             transition: `color ${theme.eased}, background-color ${theme.eased}, fill   transition:  ${theme.eased}`,
 
@@ -40,10 +41,19 @@ const PaginationList = ({ pageQty, pg, onChange, target }) => {
             },
           },
 
+          '& .MuiPaginationItem-ellipsis': {
+            '&:hover': {
+              backgroundColor: 'transparent',
+              color: theme.text,
+              cursor: 'default',
+            },
+          },
+
           color: theme.text,
           fill: theme.text,
           display: 'flex',
           justifyContent: 'center',
+          gap: '5px',
           marginTop: '30px',
         }}
       />

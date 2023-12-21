@@ -24,6 +24,7 @@ export const FilterItem = styled.li`
   position: relative;
   border-radius: 12px;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.text};
   box-shadow: ${({ theme }) => theme.shadowCards};
   transition: ${({ theme }) =>
     `transform ${theme.eased}, box-shadow ${theme.eased}`};

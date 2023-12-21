@@ -37,7 +37,6 @@ export const Workout = styled.div`
   color: ${({ theme }) => theme.text};
   font-size: 12px;
   font-weight: 500;
-  width: 75px;
   padding: 5px 7.5px;
   display: flex;
   justify-content: center;
@@ -74,13 +73,13 @@ export const ExerciseName = styled.h4`
   font-weight: 400;
   line-height: 1;
   color: ${({ theme }) => theme.text};
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 
   @media screen and (min-width: 768px) {
     font-size: 22px;
     line-height: 1.33;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 `;
 
@@ -134,7 +133,7 @@ export const ExerciseInfoItem = styled.li`
 export const ExerciseInfoTitle = styled.p`
   color: ${({ theme }) => theme.text};
   opacity: 0.4;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
 
   @media screen and (min-width: 1440px) {
@@ -144,7 +143,7 @@ export const ExerciseInfoTitle = styled.p`
 
 export const ExerciseInfo = styled.p`
   color: ${({ theme }) => theme.text};
-  font-size: 9px;
+  font-size: 10px;
 
   @media screen and (min-width: 1440px) {
     font-size: 12px;

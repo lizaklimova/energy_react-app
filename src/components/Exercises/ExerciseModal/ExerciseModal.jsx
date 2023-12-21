@@ -50,13 +50,21 @@ const ExerciseModal = ({
   const [favCards, setFavCards] = useState(
     () => JSON.parse(localStorage.getItem('favorites')) ?? []
   );
+  const [showContent, setShowContent] = useState(false);
 
   const isAddedToFavoriteRef = useRef(false);
 
   useEffect(() => {
+    setShowContent(true);
+  }, []);
+
+  useEffect(() => {
     const onEscClose = e => {
       if (e.code === 'Escape') {
-        closeExercModal();
+        setShowContent(false);
+        setTimeout(() => {
+          closeExercModal();
+        }, 500);
         document.body.style.overflow = '';
       }
     };
@@ -94,7 +102,10 @@ const ExerciseModal = ({
 
   const onBackdropClose = ({ target, currentTarget }) => {
     if (target === currentTarget) {
-      closeExercModal();
+      setShowContent(false);
+      setTimeout(() => {
+        closeExercModal();
+      }, 500);
       document.body.style.overflow = '';
     }
   };
@@ -104,13 +115,19 @@ const ExerciseModal = ({
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ExercModalBackdrop onClick={onBackdropClose}>
+    <ExercModalBackdrop
+      className={`${showContent && 'showBackdrop'}`}
+      onClick={onBackdropClose}
+    >
       <MainContainer onClick={onBackdropClose}>
-        <ExercModal>
+        <ExercModal className={`${showContent && 'showModal'}`}>
           <ModalCloseBtn
             type="button"
             onClick={() => {
-              closeExercModal();
+              setShowContent(false);
+              setTimeout(() => {
+                closeExercModal();
+              }, 500);
               document.body.style.overflow = '';
             }}
           >

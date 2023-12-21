@@ -8,6 +8,8 @@ const commonVars = {
   feedModalBackdrop: 'rgba(4, 4, 4, 0.5)',
   exercModalBackdrop: 'rgba(4, 4, 4, 0.7)',
   greyStarFill: 'rgba(244, 244, 244, 0.20);',
+  modalTransition: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+  notFoundAccent: '#581dff;',
 };
 
 export const darkTheme = {
