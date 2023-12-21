@@ -13,6 +13,12 @@ export const ExercModalBackdrop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.5;
+  transition: ${({ theme }) => `opacity ${theme.eased}`};
+
+  &.showBackdrop {
+    opacity: 1;
+  }
 `;
 
 export const ExercModal = styled.div`
@@ -23,9 +29,18 @@ export const ExercModal = styled.div`
   padding: 40px 20px;
   margin: 0 auto;
   overflow-y: auto;
+  opacity: 0.5;
+  transform: translateY(-100vh);
+  transition: ${({ theme }) =>
+    `opacity .5s ${theme.modalTransition}, transform .5s ${theme.modalTransition}`};
 
   & hr {
     border-color: rgba(244, 244, 244, 0.2);
+  }
+
+  &.showModal {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @media screen and (min-width: 768px) {
@@ -179,6 +194,7 @@ export const AddRemoveBtn = styled.button`
   color: ${({ theme }) => theme.accentBlack};
   background-color: ${({ theme }) => theme.accentWhite};
   border-radius: 30px;
+  -webkit-border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,7 +240,6 @@ export const GiveRatingBtn = styled.button`
 
   &:hover,
   &:focus {
-    outline: ${({ theme }) => `1px solid ${theme.accentWhite}`};
     background-color: ${({ theme }) => theme.accentWhite};
     color: ${({ theme }) => theme.accentBlack};
   }

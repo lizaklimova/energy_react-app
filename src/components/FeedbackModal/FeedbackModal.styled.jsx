@@ -25,6 +25,15 @@ export const FeedModal = styled.div`
   padding: 40px 20px;
   margin: 0 auto;
   z-index: 7;
+  opacity: 0.5;
+  transform: scale(0.5);
+  transition: ${({ theme }) =>
+    `opacity ${theme.eased}, transform ${theme.eased}`};
+
+  &.showModal {
+    opacity: 1;
+    transform: scale(1);
+  }
 
   @media screen and (min-width: 768px) {
     width: 430px;

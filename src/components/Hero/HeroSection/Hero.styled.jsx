@@ -101,7 +101,7 @@ export const HeroHashesDeskList = styled.ul`
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
-  width: 182px;
+  max-width: 200px;
 `;
 
 export const HeroHashesDeskItem = styled.li`

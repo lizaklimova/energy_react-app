@@ -29,6 +29,11 @@ const FeedbackModal = ({ closeFeedModal, exercId }) => {
 
   const [starValue, setStarValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    setShowContent(true);
+  }, []);
 
   useEffect(() => {
     const onEscClose = e => {
@@ -90,7 +95,7 @@ const FeedbackModal = ({ closeFeedModal, exercId }) => {
   return (
     <FeedModalBackdrop onClick={onBackdropClose}>
       <MainContainer onClick={onBackdropClose}>
-        <FeedModal>
+        <FeedModal className={`${showContent && 'showModal'}`}>
           <FeedModalCloseBtn
             type="button"
             onClick={() => {

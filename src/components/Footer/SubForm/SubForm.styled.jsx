@@ -41,10 +41,11 @@ export const SubInput = styled.input`
   &:focus + label {
     outline: none;
     top: -8px;
+    left: 14px;
     background-color: ${({ theme }) => theme.text};
 
     @media screen and (min-width: 768px) {
-      top: -12px;
+      top: -10px;
     }
   }
 
