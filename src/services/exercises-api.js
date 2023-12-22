@@ -34,23 +34,15 @@ export async function fetchQuote() {
 
 //add rating
 export async function patchRating(id, rating) {
-  const { data } = await axios.patch(`/exercises/${id}/rating`, rating, {
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
+  const { data } = await axios.patch(`/exercises/${id}/rating`, rating);
   return data;
 }
 
 //subscribe
 export async function subscribe(info) {
   try {
-    const { data } = await axios.post(`/subscription`, info, {
-      headers: {
-        'content-type': 'application/json',
-      },
-    });
-    Notify.info('Thank you for your review!');
+    const { data } = await axios.post(`/subscription`, info);
+    Notify.info('Thank you for your subscription!');
     return data;
   } catch (error) {
     return Notify.info(error.response.data.message);
