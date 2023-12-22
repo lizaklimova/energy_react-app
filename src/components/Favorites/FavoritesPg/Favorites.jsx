@@ -6,21 +6,14 @@ import FavCardsList from 'components/Favorites/FavCardsList';
 
 const Favorites = () => {
   const [areCardsAdded, setAreCardsAdded] = useState(false);
-  const [storedCards, setStoredCards] = useState([]);
+  const [storedCards, setStoredCards] = useState(
+    () => JSON.parse(localStorage.getItem('favorites')) ?? []
+  );
 
   useEffect(() => {
-    const storedCards = localStorage.getItem('favorites') ?? [];
-
-    try {
-      const parsedCards = JSON.parse(storedCards);
-      if (parsedCards && parsedCards.length > 0) {
-        setAreCardsAdded(true);
-        setStoredCards(parsedCards);
-      }
-    } catch ({ message }) {
-      console.log(message);
-    }
-  }, []);
+    if (storedCards && storedCards.length > 0) setAreCardsAdded(true);
+    localStorage.setItem('favorites', JSON.stringify(storedCards));
+  }, [storedCards]);
 
   return (
     <FavSection>

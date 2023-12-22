@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Notify } from 'notiflix';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import { ThemeContext } from 'styled-components';
@@ -22,6 +23,8 @@ import {
   FeedModalArea,
   FeedModalSubmitBtn,
 } from './FeedbackModal.styled';
+
+const modalRoot = document.getElementById('modal-root');
 
 const FeedbackModal = ({ closeFeedModal, exercId }) => {
   const { openExercModal } = useContext(ModalContext);
@@ -93,7 +96,7 @@ const FeedbackModal = ({ closeFeedModal, exercId }) => {
 
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
 
-  return (
+  return createPortal(
     <FeedModalBackdrop onClick={onBackdropClose}>
       <MainContainer onClick={onBackdropClose}>
         <FeedModal className={`${showContent && 'showModal'}`}>
@@ -152,7 +155,8 @@ const FeedbackModal = ({ closeFeedModal, exercId }) => {
           </FeedModalForm>
         </FeedModal>
       </MainContainer>
-    </FeedModalBackdrop>
+    </FeedModalBackdrop>,
+    modalRoot
   );
 };
 

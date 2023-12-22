@@ -28,9 +28,9 @@ export const FavCardsUl = styled.ul`
 `;
 
 export const FavCardLi = styled.li`
-  min-width: 100%;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
-    min-width: calc((100% - 16px) / 2);
+    width: calc((100% - 16px) / 2);
   }
 `;

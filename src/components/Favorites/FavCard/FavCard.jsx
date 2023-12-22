@@ -35,7 +35,7 @@ const FavCard = ({
   const handleDeleteFromFavs = () => {
     const updatedFavCards = favCards.filter(card => card._id !== id);
     setSavedCards(updatedFavCards);
-    localStorage.setItem('favorites', JSON.stringify(updatedFavCards));
+
     window.location.reload();
   };
 

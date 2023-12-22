@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useContext } from 'react';
+import { createPortal } from 'react-dom';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import { ThemeContext } from 'contexts/ThemeContext';
 import { darkTheme, lightTheme } from 'theme';
@@ -26,6 +27,8 @@ import {
   AddRemoveBtn,
   GiveRatingBtn,
 } from './ExerciseModal.styled';
+
+const modalRoot = document.getElementById('modal-root');
 
 const ExerciseModal = ({
   info: {
@@ -114,7 +117,7 @@ const ExerciseModal = ({
 
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
 
-  return (
+  return createPortal(
     <ExercModalBackdrop
       className={`${showContent && 'showBackdrop'}`}
       onClick={onBackdropClose}
@@ -227,7 +230,8 @@ const ExerciseModal = ({
           </ModalBtnsList>
         </ExercModal>
       </MainContainer>
-    </ExercModalBackdrop>
+    </ExercModalBackdrop>,
+    modalRoot
   );
 };
 
