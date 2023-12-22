@@ -78,6 +78,7 @@ const FeedbackModal = ({ closeFeedModal, exercId }) => {
 
     e.currentTarget.reset();
     closeFeedModal();
+    document.body.style.overflow = '';
     Notify.info('Thank you for your review!');
   };
 
