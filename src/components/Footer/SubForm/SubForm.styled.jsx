@@ -20,10 +20,6 @@ export const SubFormTitle = styled.p`
   }
 `;
 
-export const SubInputWrap = styled.div`
-  position: relative;
-`;
-
 export const SubInput = styled.input`
   background-color: transparent;
   border: none;
@@ -33,44 +29,23 @@ export const SubInput = styled.input`
   padding: 12px 14px 12px 14px;
   border-radius: 30px;
 
+  &::placeholder {
+    color: ${({ theme }) => theme.background};
+    opacity: 0.6;
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
   &:focus {
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  &:focus + label {
-    outline: none;
-    top: -8px;
-    left: 14px;
-    background-color: ${({ theme }) => theme.text};
-
-    @media screen and (min-width: 768px) {
-      top: -10px;
-    }
-  }
-
   @media screen and (min-width: 768px) {
     padding: 15px;
-  }
-`;
-
-export const SubLabel = styled.label`
-  color: ${({ theme }) => theme.background};
-  position: absolute;
-  top: 25%;
-  left: 14px;
-  display: block;
-  width: 40px;
-  height: 20px;
-  text-align: center;
-  background-color: ${({ theme }) => theme.text};
-  transition: ${({ theme }) => `top ${theme.eased}`};
-
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 1.5;
-    top: 23%;
-    width: 45px;
   }
 `;
 

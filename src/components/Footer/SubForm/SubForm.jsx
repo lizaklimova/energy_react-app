@@ -1,12 +1,5 @@
 import { subscribe } from 'services/exercises-api';
-import {
-  SubscrForm,
-  SubFormTitle,
-  SubInputWrap,
-  SubInput,
-  SubLabel,
-  SubBtn,
-} from './SubForm.styled';
+import { SubscrForm, SubFormTitle, SubInput, SubBtn } from './SubForm.styled';
 
 const SubForm = () => {
   const subscribeHandler = e => {
@@ -27,15 +20,15 @@ const SubForm = () => {
     <SubscrForm onSubmit={subscribeHandler}>
       <SubFormTitle>Subscribe and learn about new exercises!</SubFormTitle>
       <div>
-        <SubInputWrap>
-          <SubInput
-            id="subscription"
-            type="email"
-            name="subscription"
-            autoComplete="off"
-          />
-          <SubLabel>Email</SubLabel>
-        </SubInputWrap>
+        <SubInput
+          id="subscription"
+          type="email"
+          name="subscription"
+          autoComplete="off"
+          placeholder="Email"
+          required
+        />
+
         <SubBtn type="submit">Send</SubBtn>
       </div>
     </SubscrForm>
