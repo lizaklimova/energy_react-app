@@ -1,8 +1,6 @@
 import sprite from 'assets/img/sprite.svg';
 import {
   RecomBlock,
-  DumbellIcon,
-  RecomTextBlock,
   RecomTitle,
   RecomName,
   RecomText,
@@ -11,10 +9,10 @@ import {
 const Recommendation = () => {
   return (
     <RecomBlock>
-      <DumbellIcon width={32} height={32}>
+      <svg width={32} height={32}>
         <use href={`${sprite}#icon-dumbell`}></use>
-      </DumbellIcon>
-      <RecomTextBlock>
+      </svg>
+      <div>
         <RecomTitle>110 min</RecomTitle>
         <RecomName>Daily norm of sports</RecomName>
         <RecomText>
@@ -26,7 +24,7 @@ const Recommendation = () => {
           unparalleled benefits to physical health, mental well-being, and
           overall quality of life.
         </RecomText>
-      </RecomTextBlock>
+      </div>
     </RecomBlock>
   );
 };

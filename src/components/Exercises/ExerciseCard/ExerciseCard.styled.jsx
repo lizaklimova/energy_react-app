@@ -8,14 +8,17 @@ const scalingStartBtn = keyframes`
      transform: scale(1.2) translateX(3px);
 
   }
-  
 `;
 
 export const Card = styled.div`
   border-radius: 15px;
-  background-color: ${({ theme }) => theme.cardBackground};
   border: ${({ theme }) => `1.5px solid ${theme.text}`};
   padding: 16px;
+  background-color: ${({ theme }) => theme.cardBackground};
+
+  @media screen and (min-width: 1440px) {
+    min-width: 350px;
+  }
 `;
 
 export const WorkoutDiv = styled.div`
@@ -31,15 +34,15 @@ export const WorkoutBtnDiv = styled.div`
 `;
 
 export const Workout = styled.div`
-  text-transform: uppercase;
-  border-radius: 15px;
-  border: ${({ theme }) => `1.5px solid ${theme.text}`};
-  color: ${({ theme }) => theme.text};
   font-size: 12px;
   font-weight: 500;
-  padding: 5px 7.5px;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
+  border-radius: 15px;
+  border: ${({ theme }) => `1.5px solid ${theme.text}`};
+  padding: 5px 7.5px;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const RatingWrap = styled.div`
@@ -72,18 +75,16 @@ export const ExerciseName = styled.h4`
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
-  color: ${({ theme }) => theme.text};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 768px) {
     font-size: 22px;
     line-height: 1.33;
   }
 `;
-
-export const StartBtnWrap = styled.div``;
 
 export const StartBtn = styled.button`
   font-size: 16px;
@@ -131,10 +132,10 @@ export const ExerciseInfoItem = styled.li`
 `;
 
 export const ExerciseInfoTitle = styled.p`
-  color: ${({ theme }) => theme.text};
-  opacity: 0.4;
   font-size: 10px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.text};
+  opacity: 0.4;
 
   @media screen and (min-width: 1440px) {
     font-size: 12px;
@@ -142,8 +143,8 @@ export const ExerciseInfoTitle = styled.p`
 `;
 
 export const ExerciseInfo = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 10px;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 1440px) {
     font-size: 12px;

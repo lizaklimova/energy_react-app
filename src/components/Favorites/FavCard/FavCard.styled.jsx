@@ -12,9 +12,9 @@ const scalingStartBtn = keyframes`
 
 export const FavCardDiv = styled.div`
   border-radius: 15px;
-  background-color: ${({ theme }) => theme.cardBackground};
   border: ${({ theme }) => `1.5px solid ${theme.text}`};
   padding: 14px;
+  background-color: ${({ theme }) => theme.cardBackground};
 `;
 
 export const FavWorkoutDiv = styled.div`
@@ -50,7 +50,7 @@ export const DeleteBtn = styled.button`
   &:hover,
   &:focus {
     transform: scale(1.1);
-    filter: drop-shadow(0px 0px 3px #808b62);
+    filter: ${({ theme }) => `drop-shadow(0px 0px 3px ${theme.filterColor})`};
   }
 `;
 
@@ -74,10 +74,10 @@ export const FavExerciseName = styled.h4`
   font-size: 20px;
   font-weight: 400;
   line-height: 1;
-  color: ${({ theme }) => theme.text};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 768px) {
     font-size: 20px;
@@ -114,9 +114,8 @@ export const FavStartIcon = styled.svg`
 
 export const FavExerciseInfoList = styled.ul`
   display: flex;
-  gap: 10px;
-
   justify-content: space-between;
+  gap: 10px;
 
   @media screen and (min-width: 1440px) {
     justify-content: flex-start;
@@ -132,13 +131,13 @@ export const FavExerciseInfoItem = styled.li`
 `;
 
 export const FavExerciseInfoTitle = styled.p`
-  color: ${({ theme }) => theme.text};
-  opacity: 0.4;
   font-size: 10px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.text};
+  opacity: 0.4;
 `;
 
 export const FavExerciseInfo = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 10px;
+  color: ${({ theme }) => theme.text};
 `;

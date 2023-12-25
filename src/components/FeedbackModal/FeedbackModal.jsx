@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { Notify } from 'notiflix';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import { ThemeContext } from 'styled-components';
-import { darkTheme, lightTheme } from 'theme';
+import { darkTheme, lightTheme } from 'assets/styles/theme';
 import sprite from 'assets/img/sprite.svg';
 import { MainContainer } from 'components/App/App.styled';
 import { patchRating } from 'services/exercises-api';

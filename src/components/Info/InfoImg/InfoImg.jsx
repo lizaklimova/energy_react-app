@@ -1,5 +1,4 @@
 import { InfoImageBlock, InfoImage } from '../InfoImg/InfoImg.styled';
-
 import infoImgMobJpg from 'assets/img/info/info-girls-mob.jpg';
 import infoImgMobJpg2 from 'assets/img/info/info-girls-mob2x.jpg';
 import infoImgMob from 'assets/img/info/info-girls-mob.webp';

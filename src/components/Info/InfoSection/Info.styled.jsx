@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 
 export const InfoSection = styled.section`
   padding: 80px 0;
+
   @media screen and (min-width: 1440px) {
     padding-top: 20px;
   }

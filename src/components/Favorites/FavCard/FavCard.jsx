@@ -1,6 +1,5 @@
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import sprite from 'assets/img/sprite.svg';
-
 import {
   FavCardDiv,
   FavWorkoutDiv,
@@ -35,7 +34,6 @@ const FavCard = ({
   const handleDeleteFromFavs = () => {
     const updatedFavCards = favCards.filter(card => card._id !== id);
     setSavedCards(updatedFavCards);
-
     window.location.reload();
   };
 

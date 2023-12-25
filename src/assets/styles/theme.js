@@ -1,15 +1,22 @@
 const commonVars = {
-  linear: '300ms linear',
-  eased: '400ms ease-out',
+  white: '#fff',
+  grey: '#333',
   accentWhite: '#F4F4F4',
   accentBlack: '#242424',
   orange: '#EEA10C',
   green: '#098115',
+  notFoundAccent: '#581dff;',
   feedModalBackdrop: 'rgba(4, 4, 4, 0.5)',
   exercModalBackdrop: 'rgba(4, 4, 4, 0.7)',
-  greyStarFill: 'rgba(244, 244, 244, 0.20);',
+  greyStarFill: 'rgba(244, 244, 244, 0.20)',
+  filterColor: '#808b62',
+  gradient:
+    'linear-gradient(0deg, rgba(4, 4, 4, 0.20) 0%, rgba(17, 17, 17, 0.50) 100%)',
+  filterGradient:
+    'linear-gradient(0deg, rgba(17, 17, 17, 0.50) 0%, rgba(17, 17, 17, 0.50) 100%)',
+  linear: '300ms linear',
+  eased: '400ms ease-out',
   modalTransition: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-  notFoundAccent: '#581dff;',
 };
 
 export const darkTheme = {

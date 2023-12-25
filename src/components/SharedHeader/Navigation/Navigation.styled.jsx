@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Nav = styled.nav`
   display: none;
+
   @media screen and (min-width: 768px) {
     display: block;
   }
@@ -25,9 +26,9 @@ export const NavList = styled.ul`
 `;
 export const NavItem = styled.li``;
 export const NavigLink = styled(NavLink)`
-  color: ${({ theme }) => theme.background};
   font-size: 16px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.background};
   transition: ${({ theme }) => `filter ${theme.linear}`};
 
   &:hover:not(.active),

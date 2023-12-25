@@ -23,10 +23,10 @@ export const SearchInput = styled.input`
   width: 100%;
   border-radius: 30px;
   border: ${({ theme }) => `1.5px solid ${theme.text}`};
-  background-color: transparent;
   padding: 12px 20px;
-  transition: ${({ theme }) => `box-shadow ${theme.eased}`};
   color: currentColor;
+  background-color: transparent;
+  transition: ${({ theme }) => `box-shadow ${theme.eased}`};
 
   &:focus {
     outline: none;

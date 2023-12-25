@@ -17,8 +17,8 @@ export const HeroHashesMobList = styled.ul`
 
 export const HeroHashesMobItem = styled.li`
   border-radius: 30px;
-  padding: 4px 14px;
   border: ${({ theme }) => `1px solid ${theme.text}`};
+  padding: 4px 14px;
   box-shadow: ${({ theme }) => theme.shadowVolume};
 `;
 

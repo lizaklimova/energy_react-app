@@ -13,21 +13,21 @@ export const FiltersList = styled.ul`
 
 export const FilterItemBtn = styled.button`
   position: relative;
+  padding: 0;
   color: ${({ theme }) => theme.text};
   background-color: transparent;
   opacity: 0.6;
-  padding: 0;
 
   &::after {
     content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: currentColor;
-    border-radius: 20px;
     position: absolute;
     top: 110%;
     left: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: currentColor;
     opacity: 0;
     transition: ${({ theme }) => `all ${theme.eased}`};
   }

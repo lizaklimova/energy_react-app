@@ -9,8 +9,8 @@ export const FavTitle = styled.h2`
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.56px;
-  color: ${({ theme }) => theme.text};
   margin-bottom: 20px;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 768px) {
     font-size: 44px;

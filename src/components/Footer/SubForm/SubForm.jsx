@@ -6,11 +6,9 @@ const SubForm = () => {
     e.preventDefault();
 
     const email = e.currentTarget.elements.subscription.value;
-
     const data = {
       email,
     };
-
     subscribe(data);
 
     e.currentTarget.reset();

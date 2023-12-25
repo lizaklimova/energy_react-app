@@ -35,6 +35,7 @@ const Quote = ({ variant }) => {
         setIsLoading(false);
       }
     };
+
     if (new Date().getDate() !== quote.date) {
       getQuote();
     }

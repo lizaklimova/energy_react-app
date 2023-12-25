@@ -66,11 +66,7 @@ export const FiltersCardsAndInfoWrap = styled.div`
 export const BreadCrumb = styled.p`
   display: inline-block;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.33;
   letter-spacing: -0.48px;
   opacity: 0.5;
 `;
-
-export const ExercisesPaginationWrap = styled.div``;

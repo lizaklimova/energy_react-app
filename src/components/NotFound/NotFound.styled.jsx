@@ -16,12 +16,13 @@ export const NotFoundTextDiv = styled.div`
 `;
 
 export const NotFoundError = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 150px;
   font-weight: 800;
   line-height: normal;
   text-align: center;
-  background: -webkit-linear-gradient(#eee, #333);
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) =>
+    `-webkit-linear-gradient(${theme.white}, ${theme.grey})`};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,24 +33,24 @@ export const NotFoundError = styled.p`
 `;
 
 export const NotFoundInfo = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 37px;
   font-weight: 600;
   font-style: normal;
   line-height: normal;
   text-align: center;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 1440px) {
     font-size: 57px;
   }
 `;
 export const NotFoundText = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 22px;
   font-weight: 500;
   font-style: normal;
   line-height: normal;
   text-align: center;
+  color: ${({ theme }) => theme.text};
 
   @media screen and (min-width: 1440px) {
     font-size: 32px;
@@ -72,9 +73,9 @@ export const NotFoundBtn = styled.button`
   justify-content: center;
   align-items: center;
   gap: 5px;
+  padding: 10px;
   color: ${({ theme }) => theme.text};
   background-color: transparent;
-  padding: 10px;
   transition: ${({ theme }) => `color ${theme.eased}`};
 
   &:hover,

@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
 export const FooterSection = styled.footer`
-  background-color: ${({ theme }) => theme.text};
   padding: 40px 0 20px 0;
+  background-color: ${({ theme }) => theme.text};
 `;
 
 export const FooterPositioning = styled.div`
@@ -36,11 +36,11 @@ export const FooterSocialsWrap = styled.div`
 `;
 
 export const FooterTitle = styled.h2`
-  color: ${({ theme }) => theme.background};
   font-size: 40px;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.8px;
+  color: ${({ theme }) => theme.background};
   margin: 40px 0 20px 0;
 
   & span {
@@ -79,6 +79,6 @@ export const FooterPolicyWrap = styled.div`
 `;
 
 export const FooterPolicyText = styled.p`
-  color: ${({ theme }) => (theme === 'light' ? '#c6cdd1' : theme.background)};
   letter-spacing: -0.28px;
+  color: ${({ theme }) => theme.background};
 `;

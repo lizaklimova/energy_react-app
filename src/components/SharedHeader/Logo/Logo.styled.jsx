@@ -9,7 +9,6 @@ export const LogoIconWrap = styled.div`
 export const LogoIcon = styled.svg`
   fill: ${({ theme, $variant }) =>
     $variant === 'footer' ? theme.background : theme.text};
-
   transition: ${({ theme }) => theme.eased};
 
   &:hover,

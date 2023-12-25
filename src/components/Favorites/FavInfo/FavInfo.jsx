@@ -23,7 +23,6 @@ const FavInfo = () => {
   return (
     <FavInfoWrap>
       <Quote variant={'fav'} />
-
       <FavInfoPositioning>
         <FavInfoRecommendation>
           <FavInfoRecIcon width={20} height={20}>

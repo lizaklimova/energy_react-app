@@ -2,30 +2,29 @@ import styled from 'styled-components';
 
 export const FeedModalBackdrop = styled.div`
   position: fixed;
-  width: 100vw;
-  height: 100vh;
   top: 0;
   left: 0;
   bottom: 0;
   z-index: 6;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.feedModalBackdrop};
-  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.feedModalBackdrop};
+  backdrop-filter: blur(10px);
 `;
 
 export const FeedModal = styled.div`
   position: relative;
   width: 100%;
   height: 357px;
-  background-color: ${({ theme }) => theme.accentBlack};
   border-radius: 20px;
   padding: 40px 20px;
   margin: 0 auto;
-  z-index: 7;
   opacity: 0.5;
+  background-color: ${({ theme }) => theme.accentBlack};
   transform: scale(0.5);
   transition: ${({ theme }) =>
     `opacity ${theme.eased}, transform ${theme.eased}`};
@@ -69,16 +68,16 @@ export const FeedModalRatDiv = styled.div`
 `;
 
 export const FeedModalRatTitle = styled.p`
-  color: ${({ theme }) => theme.accentWhite};
-  opacity: 0.4;
   font-size: 12px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.accentWhite};
+  opacity: 0.4;
 `;
 
 export const FeedModalRatValue = styled.p`
-  color: ${({ theme }) => theme.accentWhite};
   font-size: 12px;
   line-height: 1.5;
+  color: ${({ theme }) => theme.accentWhite};
 `;
 
 export const FeedModalRatListWrap = styled.div`
@@ -121,9 +120,9 @@ export const FeedModalInput = styled.input`
   width: 100%;
   border-radius: 30px;
   border: ${({ theme }) => ` 1px solid ${theme.accentWhite}`};
+  padding: 12px 14px;
   color: ${({ theme }) => theme.accentWhite};
   background-color: transparent;
-  padding: 12px 14px;
 
   &::placeholder {
     transition: ${({ theme }) => `font-size ${theme.eased}`};

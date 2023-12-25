@@ -1,7 +1,7 @@
 import { ThemeContext } from 'contexts/ThemeContext';
 import { useContext } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
-import { lightTheme, darkTheme } from 'theme';
+import { lightTheme, darkTheme } from 'assets/styles/theme';
 
 const Spinner = () => {
   const { theme } = useContext(ThemeContext);

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Notify } from 'notiflix';
+import notify from 'notification';
 
 axios.defaults.baseURL = 'https://your-energy.b.goit.study/api';
 
@@ -42,9 +42,9 @@ export async function patchRating(id, rating) {
 export async function subscribe(info) {
   try {
     const { data } = await axios.post(`/subscription`, info);
-    Notify.info('Thank you for your subscription!');
+    notify('Thank you for your subscription!');
     return data;
   } catch (error) {
-    return Notify.info(error.response.data.message);
+    return notify(error.response.data.message);
   }
 }

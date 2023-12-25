@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalContext } from 'contexts/ExercModalOpen';
 import { ThemeContext } from 'contexts/ThemeContext';
-import { darkTheme, lightTheme } from 'theme';
+import { darkTheme, lightTheme } from 'assets/styles/theme';
 import sprite from 'assets/img/sprite.svg';
 import { capitalizeFirstLetter } from 'helpers/capitalizeFirstLetter';
 import { MainContainer } from 'components/App/App.styled';

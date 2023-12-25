@@ -11,8 +11,8 @@ export const SubscrForm = styled.form`
 `;
 
 export const SubFormTitle = styled.p`
-  color: ${({ theme }) => theme.background};
   margin-bottom: 20px;
+  color: ${({ theme }) => theme.background};
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
@@ -21,13 +21,12 @@ export const SubFormTitle = styled.p`
 `;
 
 export const SubInput = styled.input`
-  background-color: transparent;
-  border: none;
-  color: ${({ theme }) => theme.background};
-  border: 1px solid currentColor;
   width: 100%;
-  padding: 12px 14px 12px 14px;
   border-radius: 30px;
+  border: 1px solid currentColor;
+  padding: 12px 14px 12px 14px;
+  background-color: transparent;
+  color: ${({ theme }) => theme.background};
 
   &::placeholder {
     color: ${({ theme }) => theme.background};
@@ -52,11 +51,11 @@ export const SubInput = styled.input`
 export const SubBtn = styled.button`
   width: 100%;
   padding: 12px;
+  border-radius: 30px;
+  margin: 20px 0 100px 0;
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.background};
-  border-radius: 30px;
   transition: ${({ theme }) => `opacity ${theme.eased}`};
-  margin: 20px 0 100px 0;
 
   &:hover,
   &:focus {

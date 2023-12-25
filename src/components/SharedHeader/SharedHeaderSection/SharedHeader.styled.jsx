@@ -11,6 +11,7 @@ export const HeaderWrap = styled.header`
 export const BurgerBtn = styled.button`
   display: block;
   background-color: transparent;
+
   @media screen and (min-width: 768px) {
     display: none;
   }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo, useContext } from 'react';
 import throttle from 'lodash.throttle';
-import { fetchFilter } from 'services/exercises-api';
 import { Notify } from 'notiflix';
+import { fetchFilter } from 'services/exercises-api';
 import { MainContainer } from 'components/App/App.styled';
 import Search from 'components/Exercises/Search';
 import Filters from 'components/Exercises/Filters';
@@ -12,7 +12,6 @@ import PaginationList from 'components/PaginationList';
 import ExercisesCardsList from 'components/Exercises/ExercisesCardsList';
 import {
   ExercisesSection,
-  ExercisesPaginationWrap,
   ExercisesTitle,
   BreadCrumb,
   ExersisesPositionWrap,
@@ -103,7 +102,7 @@ const Exercises = () => {
 
           <FiltersCardsAndInfoWrap>
             {!breadCrumb ? (
-              <ExercisesPaginationWrap>
+              <div>
                 <FilterCardsList
                   filters={filterResults}
                   setBreadCrumb={setBreadCrumb}
@@ -113,7 +112,7 @@ const Exercises = () => {
                   pg={page}
                   onChange={setPage}
                 />
-              </ExercisesPaginationWrap>
+              </div>
             ) : (
               <ExercisesCardsList
                 page={page}
