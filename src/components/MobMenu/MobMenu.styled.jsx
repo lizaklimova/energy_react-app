@@ -12,6 +12,7 @@ export const MenuBackdrop = styled.div`
     display: block;
     width: 100vw;
     height: 100vh;
+    backdrop-filter: blur(5px);
   }
 `;
 

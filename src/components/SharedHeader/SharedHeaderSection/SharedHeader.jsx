@@ -20,7 +20,12 @@ const SharedHeader = () => {
             <Navigation />
             <Socials variant="header" />
             <BurgerBtn type="button">
-              <BurgerIcon onClick={() => setIsMenuOpen(true)} />
+              <BurgerIcon
+                onClick={() => {
+                  setIsMenuOpen(true);
+                  document.body.style.overflow = 'hidden';
+                }}
+              />
             </BurgerBtn>
           </HeaderWrap>
           <MobMenu isOpened={isMenuOpen} setOpening={setIsMenuOpen} />

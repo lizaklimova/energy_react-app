@@ -12,6 +12,7 @@ import Socials from 'components/SharedHeader/Socials/Socials';
 const MobMenu = ({ isOpened, setOpening }) => {
   const handleBackdropClose = ({ target, currentTarget }) => {
     if (target === currentTarget) setOpening(false);
+    document.body.style.overflow = '';
   };
 
   return (
