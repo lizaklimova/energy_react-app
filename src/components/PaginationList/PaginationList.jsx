@@ -9,6 +9,7 @@ const PaginationList = ({ pageQty, pg, onChange, target }) => {
 
   const handlePaginationChange = (_, num) => {
     onChange(num);
+
     smoothScroll(target);
   };
 

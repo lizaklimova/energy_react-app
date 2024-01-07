@@ -19,7 +19,13 @@ const MobMenu = ({ isOpened, setOpening }) => {
     <>
       {isOpened && <MenuBackdrop onClick={handleBackdropClose} />}
       <Menu className={isOpened ? 'is-open' : ''}>
-        <CloseMenuBtn type="button" onClick={() => setOpening(false)}>
+        <CloseMenuBtn
+          type="button"
+          onClick={() => {
+            setOpening(false);
+            document.body.style.overflow = '';
+          }}
+        >
           <CloseMenuIcon width="32" height="32">
             <use href={`${sprite}#icon-close`}></use>
           </CloseMenuIcon>

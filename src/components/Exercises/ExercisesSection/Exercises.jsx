@@ -111,6 +111,7 @@ const Exercises = () => {
                   pageQty={totalPgs}
                   pg={page}
                   onChange={setPage}
+                  target="filters"
                 />
               </div>
             ) : (
